@@ -1,28 +1,19 @@
 
 
-Clase Gato{
+Clase GatoBarco{
 
 ATRIBUTOS:
-	+string Nombre
-	+enum Pais
-	+enum ciudad
+	+string gatoNombre
+	+enum gatoPais
+	+enum gatoCiudad
 
-FUNCIONES:
-	+los getters
-}
-
-
-clase barco{
-
-ATRIBUTOS:
-	+enum Pais
-	+enum ciudad
+	+enum barcoPais
+	+enum barcoCiudad
 	+bool cargaPeligrosa
 	+bool barcoPirata
 
-FUNCIONES:	
+FUNCIONES:
 	+los getters
-	
 }
 
 clase resolver{
