@@ -1,0 +1,62 @@
+
+
+Clase Gato{
+
+ATRIBUTOS:
+	+string Nombre
+	+enum Pais
+	+enum ciudad
+
+FUNCIONES:
+	+los getters
+}
+
+
+clase barco{
+
+ATRIBUTOS:
+	+enum Pais
+	+enum ciudad
+	+bool cargaPeligrosa
+	+bool barcoPirata
+
+FUNCIONES:	
+	+los getters
+	
+}
+
+clase resolver{
+
+ATRIBUTOS:
+	- prefabDeGatosBarcos
+
+FUNCIONES:
+	+bool Acertado() (Devuelve si ha acertado o no)
+	
+	-bool comprobarNombre
+	-bool comprobarPais
+	-bool comprobar.....
+}
+
+
+
+
+
+
+
+
+
+clase libro{
+
+ATRIBUTOS:
+	-int pagActual
+	-sprite[] paginas
+
+FUNCIONES:
+	+void mostrarLibro() (que al pulsar tab muestre el libro)
+
+	-void mostrarPag() (que se muestre la pagina del libro que toca)
+	+void sigPag() (cambiar la pagina a la siguiente)
+	+void antPag() (cambiar la pagina a la anterior)
+
+}
