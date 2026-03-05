@@ -1,39 +1,49 @@
-
-
 Clase GatoBarco{
 
 ATRIBUTOS:
-	+string gatoNombre
-	+enum gatoPais
+	[SF] bool errorEnNomb
+	[SF] bool errorEnBandera
+	[SF] bool errorEnCiudad
+	.
+	.
+	.
+
+
+	+enum gatoNombre = antonio
+	+enum gatoPais = pakistan
 	+enum gatoCiudad
 
-	+enum barcoPais
+	+enum barcoPais --> miauland
 	+enum barcoCiudad
 	+bool cargaPeligrosa
 	+bool barcoPirata
+	+enum tipoDeCarga
+
+	+enum dialogociudad
 
 FUNCIONES:
-	+los getters
-}
+	start() --> setters	
 
-clase resolver{
+	+Seters de dialogo (si errorNom == true --> )
 
-ATRIBUTOS:
-	- prefabDeGatosBarcos
-
-FUNCIONES:
-	+bool Acertado() (Devuelve si ha acertado o no)
+	+setters de barco (si sale que tiene x bandera --> aparece Sprite con esa carga)
 	
-	-bool comprobarNombre
-	-bool comprobarPais
-	-bool comprobar.....
+	
+	+los getters
+
+	+bool Acertado() ()
+
+	+bool ComprobarNombre()
+	.
+	.
+	.
 }
 
 
-
-
-
-
+clase GameManager{
+	
+	
+}
 
 
 
