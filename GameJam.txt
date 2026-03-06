@@ -7,43 +7,85 @@ ATRIBUTOS:
 	.
 	.
 	.
-
-
-	+enum gatoNombre = antonio
-	+enum gatoPais = pakistan
-	+enum gatoCiudad
-
-	+enum barcoPais --> miauland
-	+enum barcoCiudad
-	+bool cargaPeligrosa
-	+bool barcoPirata
-	+enum tipoDeCarga
-
-	+enum dialogociudad
+	
+	-NameSystem
+	-CountrySystem
+	.
+	.
+	. 
 
 FUNCIONES:
-	start() --> setters	
+	-start() --> generate	
 
-	+Seters de dialogo (si errorNom == true --> )
-
-	+setters de barco (si sale que tiene x bandera --> aparece Sprite con esa carga)
+	-Generate() (crea los todos los systemas de variables y llama a los setters de valores)	
 	
-	
-	+los getters
-
-	+bool Acertado() ()
-
-	+bool ComprobarNombre()
-	.
-	.
-	.
+	+bool Acertado() (compara si todo esta en orden) 
 }
 
+clase GenericSystem<objGenerico>
+{
+ATRIBUTOS:
+	+objGenerico 1
+	+objGenerico 2
+	
+FUNCIONES: (estas funciones solo serán para resolver sistemas con dos variables*, para mas variables se overridean en nuevos sistemas**)
+	+virtual void SetValues(bool error) (genera valores 2 aleatorios y los pone igual si no hay error, si hay error pues diferentes)
+	+virtual bool IsCorrect() (si los dos valores son iguales return true)
+}
+
+*clase sistemaDeDosVariables : genericSystem<enum x>
+{
+FUNCIONES:
+	iguales que la clase base
+}
+
+**clase sistemaDeMasVariables : genericSystem<enum x>
+{
+ATRIBUTOS:
+	+x
+	+x
+	+x
+FUNCIONES:
+	+void override SetValues(error1,error2) (Se sopbreescribe el método para crear uno nuevo con 3 variables)
+	+bool override IsCorrect() (si los 3 valores son iguales es true)
+}
 
 clase GameManager{
-	
+		
+
+FUNCIONES:
+	+int getDia()
+}
+
+clase dia
+{
+	-gatoBarcos[] gatoBarcoArr
+
+FUNCIONES:
+	+void mostrarDia() (pasar a la escena del dia correspondiente)
+
+	+void siguinteGatoBarco() (mostrar el siguiente gatobarco)
 	
 }
+
+cajas
+{
+	+void abrir caja() enseña sprite de caja
+
+}
+
+barco
+{
+	+void verBarco() enseña sprite de barco (set active)
+
+}
+
+gatoDialogo
+{
+	+void mostrarDialogo()
+}
+
+
 
 
 
