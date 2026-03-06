@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public abstract class GenericSystem<T>
+public abstract class GenericSystem<ObjetoGenrico>
 {
-    private T Value1; 
-    private T Value2;
+    public ObjetoGenrico Value1; 
+    public ObjetoGenrico Value2;
 
     public virtual void SetValues(bool error) 
     {
-        Value1 = RandomEnum.GetRandomEnum<T>();
+        Value1 = RandomEnum.GetRandomEnum<ObjetoGenrico>();
 
         if (error)
-            Value2 = RandomEnum.GetRandomDiferentEnum<T>(Value1);
+            Value2 = RandomEnum.GetRandomDiferentEnum<ObjetoGenrico>(Value1);
         else
             Value2 = Value1;
     }

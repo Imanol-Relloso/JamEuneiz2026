@@ -4,13 +4,13 @@ public class CatBoat : MonoBehaviour
 {
     [Header("Errores")]
     [Tooltip("Error de nombre en el dialogo")]
-    [SerializeField] private bool ErrorEnNombre;
+    [SerializeField] public bool ErrorEnNombre;
     [Tooltip("Error de pais en el dialogo")]
-    [SerializeField] private bool ErrorEnPais;
+    [SerializeField] public bool ErrorEnPais;
     [Tooltip("Error de pais en la bandera")]
-    [SerializeField] private bool ErrorEnBandera;
+    [SerializeField] public bool ErrorEnBandera;
     [Tooltip("Error de carga en el dialogo")]
-    [SerializeField] private bool ErrorEnCarga;
+    [SerializeField] public bool ErrorEnCarga;
 
     private NameSystem nameSystem;
     private CountrySystem countrySystem;

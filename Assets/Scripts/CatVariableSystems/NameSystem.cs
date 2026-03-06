@@ -7,6 +7,9 @@ public enum Name
 }
 public class NameSystem : GenericSystem <Name>
 {
+    public Name catName;
+    public Name dialogueName;
+
     public override void SetValues(bool error)
     {
         base.SetValues(error);

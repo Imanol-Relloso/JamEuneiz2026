@@ -1,17 +1,17 @@
 using UnityEngine;
 public static class RandomEnum 
 {
-    public static T GetRandomEnum<T>()
+    public static ObjetoGenrico GetRandomEnum<ObjetoGenrico>()
     {
-        T[] v = (T[])System.Enum.GetValues(typeof(T));
+        ObjetoGenrico[] v = (ObjetoGenrico[])System.Enum.GetValues(typeof(ObjetoGenrico));
         return v[Random.Range(0, v.Length)];
     }
-    public static T GetRandomDiferentEnum<T> (T original)
+    public static ObjetoGenrico GetRandomDiferentEnum<ObjetoGenrico> (ObjetoGenrico original)
     {
-        T newEnum;
+        ObjetoGenrico newEnum;
 
         do
-            newEnum = GetRandomEnum<T>();
+            newEnum = GetRandomEnum<ObjetoGenrico>();
         while (newEnum.Equals(original));
 
         return newEnum;

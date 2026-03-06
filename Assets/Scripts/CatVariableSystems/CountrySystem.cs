@@ -7,9 +7,9 @@ public enum Country
 }
 public class CountrySystem : GenericSystem <Country>
 {
-    private Country catCountry;
-    private Country boatFlag;
-    private Country dialogueCountry;
+    public Country catCountry;
+    public Country boatFlag;
+    public Country dialogueCountry;
 
     public void SetValues(bool errorFlag, bool errorDialogue)
     {
