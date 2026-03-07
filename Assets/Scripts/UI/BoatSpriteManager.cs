@@ -20,7 +20,7 @@ public class BoatSpriteManager : MonoBehaviour, IPointerDownHandler
     {
 
     }
-    public virtual void OnPointerDown(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
         if (isBoatActive)
         {

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Libro
+  - rojo
+  - verde
   layers:
   - Default
   - TransparentFX
