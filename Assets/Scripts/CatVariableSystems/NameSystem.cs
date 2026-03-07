@@ -1,22 +1,47 @@
 using UnityEngine;
+using System.Collections.Generic;
+
 public enum Name
 {
     si,
     no,
     sisi
 }
-public class NameSystem : GenericSystem <Name>
+public class NameSystem : GenericSystem
 {
     public Name catName;
     public Name dialogueName;
 
-    public override void SetValues(bool error)
+    public void SetValues(bool errorNombre, bool errorBlackList)
     {
-        base.SetValues(error);
+        if (!errorBlackList)
+        {
+            catName = RandomEnum.GetRandomAllowedEnum<Name>(notAllowedName);
+
+            if (errorNombre)
+                dialogueName = RandomEnum.GetRandomDiferentEnum(catName);
+            else
+                dialogueName = catName;
+        }
+        else
+        {
+            catName = notAllowedName[Random.Range(0, notAllowedName.Count)];
+
+            if (errorNombre)
+                dialogueName = RandomEnum.GetRandomDiferentEnum(catName);
+            else
+                dialogueName = catName;
+        }
     }
 
     public override bool IsCorrect()
     {
-        return base.IsCorrect();
+        if(catName != dialogueName)
+            return false;
+
+        if(notAllowedName.Contains(catName))
+            return false;
+
+        return true;
     }
 }

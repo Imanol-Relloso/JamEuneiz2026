@@ -1,20 +1,22 @@
+using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public abstract class GenericSystem<ObjetoGenrico>
+public abstract class GenericSystem 
 {
-    public ObjetoGenrico Value1; 
-    public ObjetoGenrico Value2;
+    protected List<Name> notAllowedName;
+    protected List<Country> notAllowedCountry;
+    protected List<Load> notAllowedLoad;
 
-    public virtual void SetValues(bool error) 
+    public void UpdateDayConditions()
     {
-        Value1 = RandomEnum.GetRandomEnum<ObjetoGenrico>();
-
-        if (error)
-            Value2 = RandomEnum.GetRandomDiferentEnum<ObjetoGenrico>(Value1);
-        else
-            Value2 = Value1;
+        notAllowedName = DayManager.Instance.dayConditions.notAllowedNames;
+        notAllowedCountry = DayManager.Instance.dayConditions.notAllowedCountries;
+        notAllowedLoad = DayManager.Instance.dayConditions.notAllowedLoad;
     }
+
     public virtual bool IsCorrect() {
-        return Value1.Equals(Value2); 
+        return true; 
     }
 }

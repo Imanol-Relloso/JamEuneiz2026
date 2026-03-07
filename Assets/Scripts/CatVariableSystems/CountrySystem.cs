@@ -1,33 +1,59 @@
 using UnityEngine;
+using System.Collections.Generic;
+
 public enum Country
 {
     MiauLandia,
     Catarias,
     Gatonida
 }
-public class CountrySystem : GenericSystem <Country>
+public class CountrySystem : GenericSystem
 {
     public Country catCountry;
     public Country boatFlag;
     public Country dialogueCountry;
 
-    public void SetValues(bool errorFlag, bool errorDialogue)
+
+    public void SetValues(bool errorFlag, bool errorDialogue, bool errorAllowedCountry)
     {
-        catCountry = RandomEnum.GetRandomEnum<Country>();
+        if (!errorAllowedCountry)
+        {
+            catCountry = RandomEnum.GetRandomAllowedEnum<Country>(notAllowedCountry);
 
-        if (errorFlag)
-            boatFlag = RandomEnum.GetRandomDiferentEnum<Country>(catCountry);
-        else
-            boatFlag = catCountry;
+            if (errorFlag)
+                boatFlag = RandomEnum.GetRandomDiferentEnum<Country>(catCountry);
+            else
+                boatFlag = catCountry;
 
-        if (errorDialogue)
-            dialogueCountry = RandomEnum.GetRandomDiferentEnum<Country>(catCountry);
+            if (errorDialogue)
+                dialogueCountry = RandomEnum.GetRandomDiferentEnum<Country>(catCountry);
+            else
+                dialogueCountry = catCountry;
+        }
         else
-            dialogueCountry = catCountry;
+        {
+            catCountry = notAllowedCountry[Random.Range(0, notAllowedCountry.Count)];
+
+            if (errorFlag)
+                boatFlag = RandomEnum.GetRandomDiferentEnum<Country>(catCountry);
+            else
+                boatFlag = catCountry;
+
+            if (errorDialogue)
+                dialogueCountry = RandomEnum.GetRandomDiferentEnum<Country>(catCountry);
+            else
+                dialogueCountry = catCountry;
+        }
     }
 
     public override bool IsCorrect()
     {
-        return catCountry == boatFlag && boatFlag == dialogueCountry;
+        if(catCountry != boatFlag || boatFlag != dialogueCountry)
+            return false;
+
+        if(notAllowedCountry.Contains(catCountry))
+            return false;
+
+        return true;
     }
 }
