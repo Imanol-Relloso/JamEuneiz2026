@@ -42,4 +42,14 @@ public class GameManager : MonoBehaviour
         dayManager.NextDay();
         StartDay();
     }
+
+    public void CorrectGuess()
+    {
+        //Suma puntos
+        NextBoat();
+    }
+    public void IncorrectGuess()
+    {
+        NextBoat();
+    }
 }
