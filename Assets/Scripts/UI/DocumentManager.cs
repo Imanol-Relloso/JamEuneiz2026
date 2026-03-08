@@ -12,7 +12,8 @@ public class DocumentManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     private Vector2 resetPosition; 
     public float snapDistance = 0.5f; 
     public RectTransform sealPoint;
-    public CatBoat catBoat;
+    private CatBoat catBoat;
+    private GameManager gameManager;
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -21,6 +22,7 @@ public class DocumentManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     void Start()
     {
         resetPosition = rectTransform.anchoredPosition;
+        catBoat = GetComponent<CatBoat>();
     }
 
     // Update is called once per frame
@@ -53,12 +55,26 @@ public class DocumentManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             if (eventData.pointerDrag.GetComponent<DocumentManager>().id == 1)
             {
                 Debug.Log("gatito no aprobado");
-                catBoat.IsValid();
+                if (catBoat.IsValid())
+                {
+                    gameManager.CorrectGuess();
+                }
+                else
+                {
+                    gameManager.IncorrectGuess();
+                }
             }
             else if (eventData.pointerDrag.GetComponent<DocumentManager>().id == 2)
             {
                 Debug.Log("Gatito aprobado");
-                catBoat.IsValid();
+                if (catBoat.IsValid())
+                {
+                    gameManager.CorrectGuess();
+                }
+                else
+                {
+                    gameManager.IncorrectGuess();
+                }
             }
             else
             {
