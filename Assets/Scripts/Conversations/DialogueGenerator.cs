@@ -9,18 +9,26 @@ public class DialogueGenerator : MonoBehaviour
     private int index = 0;
     public float dialogueSpeed;
     public Name[] allNames;
-    public Name randomName;
+    public Name dialogueName;
     public Country[] allCountries;
-    public Country randomCountry;
+    public Country dialogueCountry;
+    public Load[] allLoads;
+    public Load dialogueLoad;
     public GameObject dialoguePanel;
-   
+    public CatBoat catBoat;
+
+
     void Start()
     {
         allNames = (Name[])System.Enum.GetValues(typeof(Name));
-        randomName = allNames[Random.Range(0, allNames.Length)];
+        dialogueName = transform.GetComponent<CatBoat>().nameSystem.dialogueName;
 
         allCountries = (Country[])System.Enum.GetValues(typeof(Country));
-        randomCountry =  allCountries[Random.Range(0, allCountries.Length)];
+        dialogueCountry = transform.GetComponent<CatBoat>().countrySystem.dialogueCountry;
+
+        allLoads = (Load[])System.Enum.GetValues(typeof(Load));
+        dialogueLoad = transform.GetComponent<CatBoat>().loadSystem.dialogueLoad;
+
     }
 
     // Update is called once per frame
@@ -28,9 +36,8 @@ public class DialogueGenerator : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            dialoguePanel.SetActive(true);
-            DialogueText.text = $"Miau, me llamo {randomName} vengo de {randomCountry}";
-            NextSentence();
+            DialogueText.text = $"Miau, me llamo {dialogueName} vengo de {dialogueCountry} llevo {dialogueLoad}";
+            //NextSentence();
         }   
     }
     public void NextSentence()

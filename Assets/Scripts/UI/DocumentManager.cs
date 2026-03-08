@@ -4,14 +4,22 @@ using UnityEngine.EventSystems;
 
 public class DocumentManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    private RectTransform rectTrans; // Es como el transform pero un rectángulo para poder poner los sellos en el sitio
+    private RectTransform rectTransform; // Es como el transform pero un rectángulo para poder poner los sellos en el sitio
     public Canvas myCanvas;
     private CanvasGroup canvasGroup;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private GameObject sealPointput;
+    public int id;
+    private Vector2 resetPosition; 
+    public float snapDistance = 0.5f; 
+    public RectTransform sealPoint; 
+    void Awake()
+    {
+        rectTransform = GetComponent<RectTransform>();
+        canvasGroup = GetComponent<CanvasGroup>();
+    }
     void Start()
     {
-        rectTrans = GetComponent<RectTransform>();
-        canvasGroup = GetComponent<CanvasGroup>();
+        resetPosition = rectTransform.anchoredPosition;
     }
 
     // Update is called once per frame
@@ -21,16 +29,42 @@ public class DocumentManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        canvasGroup.blocksRaycasts = false; // Habilita el click para uqe pueda agarrarse
+        canvasGroup.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTrans.anchoredPosition += eventData.delta / myCanvas.scaleFactor;
+        rectTransform.anchoredPosition += eventData.delta;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        canvasGroup.blocksRaycasts = true; // Se bloquea el click lo que hace que pueda 
+        canvasGroup.blocksRaycasts = true;
+
+        float distance = Vector2.Distance(rectTransform.anchoredPosition, sealPoint.anchoredPosition);
+
+        if (distance <= snapDistance)
+        {
+            rectTransform.anchoredPosition = sealPoint.anchoredPosition;
+
+            GameObject seal = eventData.pointerDrag;
+
+            if (eventData.pointerDrag.GetComponent<DocumentManager>().id == 1)
+            {
+                Debug.Log("gatito no aprobado");
+            }
+            else if (eventData.pointerDrag.GetComponent<DocumentManager>().id == 2)
+            {
+                Debug.Log("Gatito aprobado");
+            }
+            else
+            {
+                Debug.Log("no pasa nada");
+            }
+        }
+        else
+        {
+            rectTransform.anchoredPosition = resetPosition;
+        }
     }
 }

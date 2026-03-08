@@ -7,7 +7,7 @@ public class ButtonsManager : MonoBehaviour, IPointerDownHandler
     public Canvas myCanvas;
     private CanvasGroup canvasGroup;
     private bool isShowing = false;
-    [SerializeField] private GameObject boat, documentDisplayed, document, door, redSeal, greenSeal, seal;
+    [SerializeField] private GameObject boat, documentDisplayed, document, door, redSeal, greenSeal, seal, putSeal;
     private SpriteRenderer spriteRenderer;
     void Start()
     {
@@ -23,6 +23,7 @@ public class ButtonsManager : MonoBehaviour, IPointerDownHandler
             document.SetActive(false);
             redSeal.SetActive(true);
             greenSeal.SetActive(true);
+            putSeal.SetActive(true);
             seal.SetActive(true);
             door.SetActive(true);
             isShowing = true;
@@ -34,6 +35,7 @@ public class ButtonsManager : MonoBehaviour, IPointerDownHandler
             document.SetActive(true);
             redSeal.SetActive(false);
             greenSeal.SetActive(false);
+            putSeal.SetActive(false);
             seal.SetActive(false);
             door.SetActive(false);
             isShowing = false;

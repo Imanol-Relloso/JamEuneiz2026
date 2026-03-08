@@ -21,9 +21,9 @@ public class CatBoat : MonoBehaviour
     [Tooltip("Error de carga no permitida")]
     [SerializeField] public bool ErrorCargaNoPermitida;
 
-    private NameSystem nameSystem;
-    private CountrySystem countrySystem;
-    private LoadSystem loadSystem;
+    public NameSystem nameSystem;
+    public CountrySystem countrySystem;
+    public LoadSystem loadSystem;
 
     private void Start()
     {
