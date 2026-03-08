@@ -20,14 +20,11 @@ public class DialogueGenerator : MonoBehaviour
 
     void Start()
     {
-        allNames = (Name[])System.Enum.GetValues(typeof(Name));
-        dialogueName = transform.GetComponent<CatBoat>().nameSystem.dialogueName;
+        dialogueName = transform.GetComponentInParent<CatBoat>().nameSystem.dialogueName;
 
-        allCountries = (Country[])System.Enum.GetValues(typeof(Country));
-        dialogueCountry = transform.GetComponent<CatBoat>().countrySystem.dialogueCountry;
+        dialogueCountry = transform.GetComponentInParent<CatBoat>().countrySystem.dialogueCountry;
 
-        allLoads = (Load[])System.Enum.GetValues(typeof(Load));
-        dialogueLoad = transform.GetComponent<CatBoat>().loadSystem.dialogueLoad;
+        dialogueLoad = transform.GetComponentInParent<CatBoat>().loadSystem.dialogueLoad;
 
     }
 

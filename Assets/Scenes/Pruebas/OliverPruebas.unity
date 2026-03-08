@@ -1540,16 +1540,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691274664}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1484382, y: 0.11968451, z: 1147.4297}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 62.949238, y: 3.506756, z: 30982.69}
+  m_LocalScale: {x: 29.3, y: 29.3, z: 29.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1167437546}
   - {fileID: 45285616}
   - {fileID: 1994304791}
   - {fileID: 1928220501}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1355404842}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &810331741
 GameObject:
@@ -2827,6 +2827,7 @@ RectTransform:
   - {fileID: 1289797253}
   - {fileID: 1303297259}
   - {fileID: 1537932895}
+  - {fileID: 691274666}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2893,7 +2894,7 @@ MonoBehaviour:
   allLoads: 0100000000000000
   dialogueLoad: 0
   dialoguePanel: {fileID: 583570618}
-  catBoat: {fileID: 7548052323922434593, guid: e99493c469679f54199e34ed73f70695, type: 3}
+  catBoat: {fileID: 691274665}
 --- !u!1 &1590993169
 GameObject:
   m_ObjectHideFlags: 0
@@ -3619,7 +3620,6 @@ MonoBehaviour:
   currentDay: 0
   days:
   - {fileID: 3822038383704588644, guid: 18c7ae6c14d503e4e9b9a1255841413b, type: 3}
-  - {fileID: 3822038383704588644, guid: 18c7ae6c14d503e4e9b9a1255841413b, type: 3}
 --- !u!4 &1994304791
 Transform:
   m_ObjectHideFlags: 0
@@ -3814,4 +3814,3 @@ SceneRoots:
   - {fileID: 69711715}
   - {fileID: 1355404842}
   - {fileID: 1900282602}
-  - {fileID: 691274666}
