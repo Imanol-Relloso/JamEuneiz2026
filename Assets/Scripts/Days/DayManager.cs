@@ -7,7 +7,7 @@ public class DayManager : MonoBehaviour
     [SerializeField] private int currentDay;
 
     [Header("PREFABS DE LOS DIAS")]
-    [SerializeField]private Day[] days;
+    [SerializeField] private Day[] days;
 
     private void Awake()
     {
@@ -16,21 +16,33 @@ public class DayManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
+    }
+
+    private void Start()
+    {
+        StartDay();
+    }
+
+    private void StartDay()
+    {
+        days[currentDay].InitializeDay();
     }
 
     public void NextDay()
     {
         currentDay++;
 
-        if (currentDay > days.Length)
-            //se llama al final del juego
-            return;
+        StartDay();
     }
 
     public DayConditions GetDayConditions()
     {
         return days[currentDay].GetCoditions();
+    }
+
+    public Day GetCurrentDay()
+    {
+        return days[currentDay];
     }
 }
