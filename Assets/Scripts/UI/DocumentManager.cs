@@ -11,7 +11,8 @@ public class DocumentManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     public int id;
     private Vector2 resetPosition; 
     public float snapDistance = 0.5f; 
-    public RectTransform sealPoint; 
+    public RectTransform sealPoint;
+    public CatBoat catBoat;
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -52,10 +53,12 @@ public class DocumentManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler
             if (eventData.pointerDrag.GetComponent<DocumentManager>().id == 1)
             {
                 Debug.Log("gatito no aprobado");
+                catBoat.IsValid();
             }
             else if (eventData.pointerDrag.GetComponent<DocumentManager>().id == 2)
             {
                 Debug.Log("Gatito aprobado");
+                catBoat.IsValid();
             }
             else
             {
