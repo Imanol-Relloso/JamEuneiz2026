@@ -11,8 +11,7 @@ public class CatBoatManager : MonoBehaviour
 
         if (currentDay == null || !currentDay.HasBoatsLeft())
         {
-            //Final del dia
-            Debug.Log("Fin del día");
+            GameManager.Instance.nextDay();
             return;
         }
 

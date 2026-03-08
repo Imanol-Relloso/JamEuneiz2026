@@ -511,7 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c0e36fa96358214c8bd349f1d246eec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDay: 1
+  currentDay: 0
   days:
   - {fileID: 3822038383704588644, guid: 18c7ae6c14d503e4e9b9a1255841413b, type: 3}
   - {fileID: 3822038383704588644, guid: cad45762ab384004fab508cead9a84e5, type: 3}
