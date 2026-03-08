@@ -9,11 +9,15 @@ public abstract class GenericSystem
     protected List<Country> notAllowedCountry;
     protected List<Load> notAllowedLoad;
 
+    DayConditions rules;
+
     public void UpdateDayConditions()
     {
-        notAllowedName = DayManager.Instance.dayConditions.notAllowedNames;
-        notAllowedCountry = DayManager.Instance.dayConditions.notAllowedCountries;
-        notAllowedLoad = DayManager.Instance.dayConditions.notAllowedLoad;
+        rules = DayManager.Instance.GetDayConditions();
+
+        notAllowedName = rules.notAllowedNames;
+        notAllowedCountry = rules.notAllowedCountries;
+        notAllowedLoad = rules.notAllowedLoad;
     }
 
     public virtual bool IsCorrect() {
