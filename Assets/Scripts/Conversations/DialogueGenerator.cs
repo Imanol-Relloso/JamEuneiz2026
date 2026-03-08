@@ -13,16 +13,14 @@ public class DialogueGenerator : MonoBehaviour
     public Country[] allCountries;
     public Country randomCountry;
     public GameObject dialoguePanel;
+   
     void Start()
     {
-        dialoguePanel.SetActive(true);
-
         allNames = (Name[])System.Enum.GetValues(typeof(Name));
         randomName = allNames[Random.Range(0, allNames.Length)];
 
         allCountries = (Country[])System.Enum.GetValues(typeof(Country));
         randomCountry =  allCountries[Random.Range(0, allCountries.Length)];
-
     }
 
     // Update is called once per frame
@@ -30,15 +28,15 @@ public class DialogueGenerator : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            dialoguePanel.SetActive(true);
+            DialogueText.text = $"Miau, me llamo {randomName} vengo de {randomCountry}";
             NextSentence();
-        }
-        
+        }   
     }
     public void NextSentence()
     {
         if (index <= sentences.Length -1)
         {
-            DialogueText.text = $"Miau, me llamo {randomName} vengo de {randomCountry}";
             StartCoroutine(WriteSentence());
         }
         else
@@ -51,7 +49,6 @@ public class DialogueGenerator : MonoBehaviour
     {
         dialoguePanel.SetActive(false); 
     }
-
     IEnumerator WriteSentence()
     {
         foreach(char randomName in sentences[index].ToCharArray())
