@@ -44,12 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc735cda8a5d78f40ac5a708f2b9fc23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialDay: 1
   notAllowedCat: 
   notAllowedCountry: 
   notAllowedLoad: 
-  catBoatPrefabs:
+  catBoatWithoutError:
   - {fileID: 536098355670350403, guid: e99493c469679f54199e34ed73f70695, type: 3}
   - {fileID: 536098355670350403, guid: 209900c71d1715a4b9b97f9fa6e047b5, type: 3}
   - {fileID: 536098355670350403, guid: b3ed429e5502faf49a713c93e48fa0e9, type: 3}
   - {fileID: 536098355670350403, guid: 01ee896a592b2384eb8c69d231cb5cbe, type: 3}
-  boatsQuantity: 3
+  catBoatWithError: []
+  boatsWithoutErrors: 0
+  boatsWithErrors: 0

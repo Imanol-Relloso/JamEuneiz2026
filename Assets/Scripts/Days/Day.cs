@@ -3,14 +3,18 @@ using System.Collections.Generic;
 
 public class Day : MonoBehaviour
 {
+    [SerializeField] private bool tutorialDay;
+
     [Header("CONDICIONES DEL DIA")]
     [SerializeField] private Name[] notAllowedCat;
     [SerializeField] private Country[] notAllowedCountry;
     [SerializeField] private Load[] notAllowedLoad;
 
     [Header("BARCOS DEL DIA")]
-    [SerializeField] private GameObject[] catBoatPrefabs;
-    [SerializeField] private int boatsQuantity;
+    [SerializeField] private GameObject[] catBoatWithoutError;
+    [SerializeField] private GameObject[] catBoatWithError;
+    [SerializeField] private int boatsWithoutErrors;
+    [SerializeField] private int boatsWithErrors;
 
     private List<GameObject> boatsQueue;
     private DayConditions dayConditions;
@@ -38,21 +42,45 @@ public class Day : MonoBehaviour
 
     private void GenerateQueue()
     {
-        boatsQueue = new List<GameObject>();
-
-        List<GameObject> tempList = new List<GameObject>(catBoatPrefabs);
-        
-        for (int i = tempList.Count - 1; i > 0; i--)
+        Debug.Log("Tutorial day = " + tutorialDay);
+        if(tutorialDay)
         {
-            int random = Random.Range(0, i + 1);
-            GameObject temp = tempList[i];
-            tempList[i] = tempList[random];
-            tempList[random] = temp;
+            boatsQueue = new List<GameObject>(catBoatWithoutError);
+            for (int i = 0; i < boatsQueue.Count; i++)
+            {
+                Debug.Log(boatsQueue[i]);
+            }
+            return;
         }
 
-        for (int i = 0; i < boatsQuantity && i < tempList.Count; i++)
+        boatsQueue = new List<GameObject>();
+
+        for (int i = 0; i < boatsWithoutErrors; i++)
         {
-            boatsQueue.Add(tempList[i]);
+            GameObject prefab = catBoatWithoutError[Random.Range(0, catBoatWithoutError.Length)];
+            boatsQueue.Add(prefab);
+        }
+
+        for (int i = 0; i < boatsWithErrors; i++)
+        {
+            GameObject prefab = catBoatWithError[Random.Range(0, catBoatWithError.Length)];
+            boatsQueue.Add(prefab);
+        }
+
+        for (int i = boatsQueue.Count - 1; i > 0; i--)
+        {
+            int random = Random.Range(0, i + 1);
+
+            GameObject temp = boatsQueue[i];
+            boatsQueue[i] = boatsQueue[random];
+            boatsQueue[random] = temp;
+        }
+
+        Debug.Log("Barcos generados: " + boatsQueue.Count);
+
+        for (int i = 0; i < boatsQueue.Count; i++)
+        {
+            Debug.Log(boatsQueue[i]);
         }
     }
 
