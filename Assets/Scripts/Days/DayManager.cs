@@ -19,26 +19,26 @@ public class DayManager : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
+    public void StartDay()
     {
-        StartDay();
-    }
+        if (currentDay < 0 || currentDay >= days.Length)
+        {
+            Debug.Log("No hay más días disponibles");
+            return;
+        }
 
-    private void StartDay()
-    {
         days[currentDay].InitializeDay();
     }
 
     public void NextDay()
     {
         currentDay++;
-
         StartDay();
     }
 
     public DayConditions GetDayConditions()
     {
-        return days[currentDay].GetCoditions();
+        return GetCurrentDay().GetCoditions();
     }
 
     public Day GetCurrentDay()
