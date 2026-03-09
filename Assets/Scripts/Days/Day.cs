@@ -42,14 +42,9 @@ public class Day : MonoBehaviour
 
     private void GenerateQueue()
     {
-        Debug.Log("Tutorial day = " + tutorialDay);
         if(tutorialDay)
         {
             boatsQueue = new List<GameObject>(catBoatWithoutError);
-            for (int i = 0; i < boatsQueue.Count; i++)
-            {
-                Debug.Log(boatsQueue[i]);
-            }
             return;
         }
 
@@ -74,13 +69,6 @@ public class Day : MonoBehaviour
             GameObject temp = boatsQueue[i];
             boatsQueue[i] = boatsQueue[random];
             boatsQueue[random] = temp;
-        }
-
-        Debug.Log("Barcos generados: " + boatsQueue.Count);
-
-        for (int i = 0; i < boatsQueue.Count; i++)
-        {
-            Debug.Log(boatsQueue[i]);
         }
     }
 
