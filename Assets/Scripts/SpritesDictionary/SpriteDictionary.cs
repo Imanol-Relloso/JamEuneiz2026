@@ -47,15 +47,15 @@ public class SpriteDictionary : MonoBehaviour
             loadDict[loadSprite.Load] = loadSprite.sprite;
     }
 
-    public static Sprite GetNameSprite(Name name)
+    public Sprite GetNameSprite(Name name)
     {
         return nameDict[name];
     }
-    public static Sprite GetCountrySprite(Country country)
+    public Sprite GetCountrySprite(Country country)
     {
         return countryDict[country];
     }
-    public static Sprite GetLoadSprite(Load load)
+    public Sprite GetLoadSprite(Load load)
     {
         return loadDict[load];
     }
