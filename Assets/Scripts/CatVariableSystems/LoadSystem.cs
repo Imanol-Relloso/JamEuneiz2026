@@ -9,6 +9,8 @@ public class LoadSystem : GenericSystem
     public Load boatLoad;
     public Load dialogueLoad;
 
+    public Sprite loadSprite;
+
     public void SetValues(bool errorDialogue, bool errorNotAllowed)
     {
         if (!errorNotAllowed)
@@ -29,8 +31,13 @@ public class LoadSystem : GenericSystem
             else
                 dialogueLoad = boatLoad;
         }
+        SetSprite();
     }
 
+    private void SetSprite()
+    {
+        loadSprite = SpriteDictionary.Instance.GetLoadSprite(boatLoad);
+    }
     public override bool IsCorrect()
     {
         if(boatLoad != dialogueLoad)

@@ -13,6 +13,7 @@ public class CountrySystem : GenericSystem
     public Country boatFlag;
     public Country dialogueCountry;
 
+    public Sprite countrySprite;
 
     public void SetValues(bool errorFlag, bool errorDialogue, bool errorAllowedCountry)
     {
@@ -44,6 +45,13 @@ public class CountrySystem : GenericSystem
             else
                 dialogueCountry = catCountry;
         }
+
+        SetSprite();
+    }
+
+    private void SetSprite()
+    {
+        countrySprite = SpriteDictionary.Instance.GetCountrySprite(boatFlag);
     }
 
     public override bool IsCorrect()
