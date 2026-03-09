@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class ButtonsManager : MonoBehaviour
 {
-    [SerializeField] private GameObject boat, deck, deckDoor, boatDoor, documentDisplayed, document, closeDocument;
+    [SerializeField] private GameObject boat, deck, deckDoor, boatDoor, documentDisplayed, document, closeDocument, cat;
     private RaycastHit2D hit;
     void Start()
     {
@@ -63,6 +63,10 @@ public class ButtonsManager : MonoBehaviour
             boatDoor.SetActive(true);
             deckDoor.SetActive(false);
             deck.SetActive(false);
+        }
+        else if (hit.collider.gameObject == cat)
+        {
+            DialogueGenerator.Instance.StartDialogue();
         }
 
     }
