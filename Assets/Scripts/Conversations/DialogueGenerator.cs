@@ -31,11 +31,14 @@ public class DialogueGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            DialogueText.text = $"Miau, me llamo {dialogueName} vengo de {dialogueCountry} llevo {dialogueLoad}";
-            //NextSentence();
-        }   
+       
+    }
+
+    public void FirstSentence()
+    {
+        string sentence = sentences[Random.Range(0, sentences.Length)];
+        
+        sentence = sentence.Replace("{NOMBRE}", dialogueName.ToString());
     }
     public void NextSentence()
     {

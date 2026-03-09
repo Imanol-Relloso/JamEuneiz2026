@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ColorChanger : MonoBehaviour, IPointerDownHandler
+public class ColorChanger : MonoBehaviour
 {
     [SerializeField] private GameObject seal;
     public Color changerColor;
@@ -19,7 +19,7 @@ public class ColorChanger : MonoBehaviour, IPointerDownHandler
     {
         
     }
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnMouseDown()
     {
         SpriteRenderer sr = seal.GetComponent<SpriteRenderer>();
         sr.color = changerColor;

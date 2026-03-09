@@ -2,26 +2,18 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DocumentManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class DocumentManager : MonoBehaviour
 {
-    private RectTransform rectTransform; // Es como el transform pero un rectángulo para poder poner los sellos en el sitio
-    public Canvas myCanvas;
-    private CanvasGroup canvasGroup;
-    [SerializeField] private GameObject sealPointput;
     public int id;
-    private Vector2 resetPosition; 
-    public float snapDistance = 0.5f; 
-    public RectTransform sealPoint;
     private CatBoat catBoat;
     private GameManager gameManager;
-    void Awake()
-    {
-        rectTransform = GetComponent<RectTransform>();
-        canvasGroup = GetComponent<CanvasGroup>();
-    }
+
+    [SerializeField] private Transform target;
+    private float putDistance = 1f;
+    private Vector3 resetPosition;
     void Start()
     {
-        resetPosition = rectTransform.anchoredPosition;
+        resetPosition = transform.position;
         catBoat = GetComponent<CatBoat>();
     }
 
@@ -30,29 +22,25 @@ public class DocumentManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     {
         
     }
-    public void OnBeginDrag(PointerEventData eventData)
+    public void OnMouseDown()
     {
-        canvasGroup.blocksRaycasts = false;
+    }
+    public void OnMouseDrag()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0;
+
+        transform.position = mousePos;
     }
 
-    public void OnDrag(PointerEventData eventData)
+    public void OnMouseUp()
     {
-        rectTransform.anchoredPosition += eventData.delta;
-    }
+        float distance = Vector2.Distance(transform.position, target.position);
 
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        canvasGroup.blocksRaycasts = true;
-
-        float distance = Vector2.Distance(rectTransform.anchoredPosition, sealPoint.anchoredPosition);
-
-        if (distance <= snapDistance)
+        if (distance < putDistance)
         {
-            rectTransform.anchoredPosition = sealPoint.anchoredPosition;
-
-            GameObject seal = eventData.pointerDrag;
-
-            if (eventData.pointerDrag.GetComponent<DocumentManager>().id == 1)
+            transform.position = target.position;
+            if (gameObject.GetComponent<DocumentManager>().id == 1)
             {
                 Debug.Log("gatito no aprobado");
                 if (catBoat.IsValid())
@@ -64,7 +52,7 @@ public class DocumentManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler
                     gameManager.IncorrectGuess();
                 }
             }
-            else if (eventData.pointerDrag.GetComponent<DocumentManager>().id == 2)
+            else if (gameObject.GetComponent<DocumentManager>().id == 2)
             {
                 Debug.Log("Gatito aprobado");
                 if (catBoat.IsValid())
@@ -83,7 +71,7 @@ public class DocumentManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler
         }
         else
         {
-            rectTransform.anchoredPosition = resetPosition;
+            transform.position = resetPosition;
         }
     }
 }

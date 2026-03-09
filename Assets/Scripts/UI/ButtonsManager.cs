@@ -1,50 +1,72 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ButtonsManager : MonoBehaviour, IPointerDownHandler
+public class ButtonsManager : MonoBehaviour
 {
-    private RectTransform rectTrans; // Es como el transform pero un rectángulo para poder poner los sellos en el sitio
-    public Canvas myCanvas;
-    private CanvasGroup canvasGroup;
-    private bool isShowing = false;
-    [SerializeField] private GameObject boat, documentDisplayed, document, door, redSeal, greenSeal, seal, putSeal;
-    private SpriteRenderer spriteRenderer;
+    [SerializeField] private GameObject boat, deck, deckDoor, boatDoor, documentDisplayed, document, closeDocument;
+    private RaycastHit2D hit;
     void Start()
     {
-        rectTrans = GetComponent<RectTransform>();
-        canvasGroup = GetComponent<CanvasGroup>();
     }
-    public void OnPointerDown(PointerEventData eventData)
+
+    void Update()
     {
-        if (!isShowing)
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            hit = Physics2D.Raycast(mousePos, Vector2.zero);
+            
+            if (hit.collider != null)
+            {
+                Activation();
+            }
+        }
+    }
+    public void Activation()
+    {
+        if (hit.collider.gameObject == document)
         {
             boat.SetActive(false);
             documentDisplayed.SetActive(true);
             document.SetActive(false);
-            redSeal.SetActive(true);
-            greenSeal.SetActive(true);
-            putSeal.SetActive(true);
-            seal.SetActive(true);
-            door.SetActive(true);
-            isShowing = true;
+            closeDocument.SetActive(true);
+            boatDoor.SetActive(false);
+            deckDoor.SetActive(false);
+            deck.SetActive(false);
         }
-        else
+        else if (hit.collider.gameObject == closeDocument)
         {
             boat.SetActive(true);
             documentDisplayed.SetActive(false);
             document.SetActive(true);
-            redSeal.SetActive(false);
-            greenSeal.SetActive(false);
-            putSeal.SetActive(false);
-            seal.SetActive(false);
-            door.SetActive(false);
-            isShowing = false;
+            closeDocument.SetActive(false);
+            boatDoor.SetActive(true);
+            deckDoor.SetActive(false);
+            deck.SetActive(false);
         }
+        else if (hit.collider.gameObject == boatDoor)
+        {
+            boat.SetActive(false);
+            documentDisplayed.SetActive(false);
+            document.SetActive(false);
+            closeDocument.SetActive(false);
+            boatDoor.SetActive(false);
+            deckDoor.SetActive (true);
+            deck.SetActive(true);
+        }
+        else if (hit.collider.gameObject == deckDoor)
+        {
+            boat.SetActive(true);
+            documentDisplayed.SetActive(false);
+            document.SetActive(true);
+            closeDocument.SetActive(false);
+            boatDoor.SetActive(true);
+            deckDoor.SetActive(false);
+            deck.SetActive(false);
+        }
+
     }
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
 }

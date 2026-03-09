@@ -1,27 +1,29 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class BoxSpriteManager : MonoBehaviour, IPointerDownHandler
+public class BoxSpriteManager : MonoBehaviour
 {
-    public Sprite openBox, closedBox;
-    private SpriteRenderer spriteRenderer;
-    public GameObject box;
+    [SerializeField] private Sprite openBox;
+    [SerializeField] private Sprite closeBox;
     private bool isOpen = false;
-   
-    public void Start()
+    private SpriteRenderer sr;
+
+    void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
     }
-    public void OnPointerDown(PointerEventData eventData)
-    {  
-        if (box!= isOpen)
+
+    void OnMouseDown()
+    {
+        if (isOpen)
         {
-            box.GetComponent<SpriteRenderer>().sprite = openBox;
-            isOpen = true;
+            sr.sprite = closeBox;
+            isOpen = false;
         }
         else
         {
-            box.GetComponent<SpriteRenderer>().sprite = closedBox;
-            isOpen = false;
+            sr.sprite = openBox;
+            isOpen = true;
         }
     }
 }
