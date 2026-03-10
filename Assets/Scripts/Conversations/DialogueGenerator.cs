@@ -20,6 +20,11 @@ public class DialogueGenerator : MonoBehaviour
     [SerializeField] public TMP_Text dialogueText;
 
     private string knotRandom;
+    private float dialogueSpeed = 0.05f;
+    public bool isTyping = true;
+
+    private string texto;
+    public bool isEnded;
     void Start()
     {
         catBoat = GetComponentInParent<CatBoat>();
@@ -46,10 +51,27 @@ public class DialogueGenerator : MonoBehaviour
     {
         story.ChoosePathString(knotRandom);
 
-        string texto = story.Continue();
-        dialogueText.text = texto;
-
+        texto = story.Continue();
+        StartCoroutine(WriteLine(texto));
+        
     }
-    
-    
+    public void AutomaticDialogue()
+    {
+        StopAllCoroutines();
+        dialogueText.text = texto;
+        isTyping = false;
+    }
+
+    IEnumerator WriteLine(string texto)
+    {
+        isTyping = true;
+        dialogueText.text = "";
+        foreach (char letter in texto.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(dialogueSpeed);
+        }
+        isTyping = false;
+    }
+
 }
