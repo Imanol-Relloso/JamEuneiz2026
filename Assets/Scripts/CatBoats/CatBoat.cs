@@ -29,9 +29,14 @@ public class CatBoat : MonoBehaviour
     {
         Generate();
 
-        Debug.Log(IsValid());
-        Debug.Log(nameSystem.catName);
-        Debug.Log(nameSystem.dialogueName);
+        Debug.Log(transform.gameObject);
+        Debug.Log("Gato: " + nameSystem.catName);
+        Debug.Log("Gato dialo: " + nameSystem.dialogueName);
+        Debug.Log("Pais: " + countrySystem.catCountry);
+        Debug.Log("Bandera: " + countrySystem.boatFlag);
+        Debug.Log("Dial pais: " + countrySystem.dialogueCountry);
+        Debug.Log("Carga: " + loadSystem.boatLoad);
+        Debug.Log("Dial carga: " + loadSystem.dialogueLoad);
     }
 
     private void Generate()

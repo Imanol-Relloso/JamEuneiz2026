@@ -7,52 +7,43 @@ using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 public class DialogueGenerator : MonoBehaviour
 {
     private Name dialogueName;
-
     private Country dialogueCountry;
     private Load dialogueLoad;
+    private CatBoat catBoat;
+
     private GameObject dialoguePanel;
 
     public TextAsset ink;
     private Story story;
     public string[] sentences = { "dialogo1", "dialogo2", "dialogo3", "dialogo4" };
-    public static DialogueGenerator Instance;
 
     [SerializeField] public TMP_Text dialogueText;
-    void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-    }
+
+    private string knotRandom;
     void Start()
     {
-        dialogueName = transform.GetComponentInParent<CatBoat>().nameSystem.dialogueName;
+        catBoat = GetComponentInParent<CatBoat>();
 
-        dialogueCountry = transform.GetComponentInParent<CatBoat>().countrySystem.dialogueCountry;
+        dialogueName = catBoat.nameSystem.dialogueName;
 
-        dialogueLoad = transform.GetComponentInParent<CatBoat>().loadSystem.dialogueLoad;
+        dialogueCountry = catBoat.countrySystem.dialogueCountry;
+
+        dialogueLoad = catBoat.loadSystem.dialogueLoad;
+
+        SetDialogue();
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    public void OnMouseDown()
-    {
-        
-    }
-    public void StartDialogue()
+    private void SetDialogue()
     {
         story = new Story(ink.text);
         story.variablesState["NOMBRE"] = dialogueName.ToString();
         story.variablesState["PAIS"] = dialogueCountry.ToString();
         story.variablesState["CARGA"] = dialogueLoad.ToString();
-        string knotRandom = sentences[Random.Range(0, sentences.Length)];
+        knotRandom = sentences[Random.Range(0, sentences.Length)];
+    }
+    public void StartDialogue()
+    {
         story.ChoosePathString(knotRandom);
 
         string texto = story.Continue();

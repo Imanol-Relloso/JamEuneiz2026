@@ -5,9 +5,7 @@ public class ButtonsManager : MonoBehaviour
 {
     [SerializeField] private GameObject boat, deck, deckDoor, boatDoor, documentDisplayed, document, closeDocument, cat;
     private RaycastHit2D hit;
-    void Start()
-    {
-    }
+    [SerializeField] private DialogueGenerator dialogueGenerator;
 
     void Update()
     {
@@ -66,7 +64,7 @@ public class ButtonsManager : MonoBehaviour
         }
         else if (hit.collider.gameObject == cat)
         {
-            DialogueGenerator.Instance.StartDialogue();
+            dialogueGenerator.StartDialogue();
         }
 
     }

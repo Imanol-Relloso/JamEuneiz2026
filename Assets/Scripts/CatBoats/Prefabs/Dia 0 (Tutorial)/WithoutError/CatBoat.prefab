@@ -334,7 +334,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3811277863228755211}
   - component: {fileID: 7144147744843360043}
-  - component: {fileID: 6714940940079282829}
   - component: {fileID: 5056789613256381813}
   m_Layer: 0
   m_Name: Gatito
@@ -413,25 +412,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6714940940079282829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2475136309438771306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e2d15c0d9d830e41bb26ae7e3fa677f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ErrorEnNombre: 0
-  ErrorGatoNoPermitido: 0
-  ErrorEnPais: 0
-  ErrorEnBandera: 0
-  ErrorEnPaisPermitido: 0
-  ErrorEnCarga: 0
-  ErrorCargaNoPermitida: 0
 --- !u!70 &5056789613256381813
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2124,6 +2104,7 @@ MonoBehaviour:
   document: {fileID: 3470594980083222048}
   closeDocument: {fileID: 5519448507811665949}
   cat: {fileID: 2475136309438771306}
+  dialogueGenerator: {fileID: 6470467221258777668}
 --- !u!1 &6244440486162118482
 GameObject:
   m_ObjectHideFlags: 0

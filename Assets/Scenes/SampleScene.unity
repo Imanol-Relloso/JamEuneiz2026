@@ -209,7 +209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuManager: {fileID: 1225328450}
-  dayManager: {fileID: 1626329460}
   catBoatManager: {fileID: 40920655}
 --- !u!1 &519420028
 GameObject:
@@ -461,9 +460,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d55cf1685bf004bba0b1803a84646d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameSprites: []
-  countrySprites: []
-  loadSprites: []
+  nameSprites:
+  - name: 0
+    sprite: {fileID: 0}
+  - name: 1
+    sprite: {fileID: 0}
+  - name: 2
+    sprite: {fileID: 0}
+  countrySprites:
+  - country: 0
+    sprite: {fileID: 0}
+  - country: 1
+    sprite: {fileID: 0}
+  - country: 2
+    sprite: {fileID: 0}
+  loadSprites:
+  - Load: 0
+    sprite: {fileID: 0}
+  - Load: 1
+    sprite: {fileID: 0}
 --- !u!4 &1097042713
 Transform:
   m_ObjectHideFlags: 0
