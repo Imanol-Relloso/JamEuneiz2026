@@ -65,20 +65,20 @@ public class ButtonsManager : MonoBehaviour
         }
         else if (hit.collider.gameObject == cat)
         {
-            if (dialogueGenerator.isTyping == false)
+            if (dialogueGenerator.isTyping == false && dialogueGenerator.isEnded == false)
             {
                 dialogueGenerator.StartDialogue();
-                dialogueGenerator.isEnded = false;
             }
-           else if (dialogueGenerator.isTyping && dialogueGenerator.isEnded == false)
+           if (dialogueGenerator.isTyping && dialogueGenerator.isEnded == false)
            {
                 dialogueGenerator.AutomaticDialogue();
-                
+
            }
-           //else if (dialogueGenerator.isTyping && dialogueGenerator.isEnded)
-           //{
-               // dialogueGenerator.EndDialogue();
-          // }
+           if (dialogueGenerator.isTyping == false && dialogueGenerator.isEnded)
+           {
+                Debug.Log("entra");
+               dialogueGenerator.EndDialogue();
+           }
 
         }
 
