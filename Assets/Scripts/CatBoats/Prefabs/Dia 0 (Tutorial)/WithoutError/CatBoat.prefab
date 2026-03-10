@@ -335,6 +335,7 @@ GameObject:
   - component: {fileID: 3811277863228755211}
   - component: {fileID: 7144147744843360043}
   - component: {fileID: 5056789613256381813}
+  - component: {fileID: 1949861089113694758}
   m_Layer: 0
   m_Name: Gatito
   m_TagString: Untagged
@@ -449,6 +450,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.99999994, y: 2}
   m_Direction: 0
+--- !u!114 &1949861089113694758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2475136309438771306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae147702cf46cf4996de7465767480e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2513447101361364461
 GameObject:
   m_ObjectHideFlags: 0
