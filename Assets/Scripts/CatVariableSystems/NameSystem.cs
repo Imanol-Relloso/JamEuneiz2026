@@ -3,9 +3,20 @@ using System.Collections.Generic;
 
 public enum Name
 {
-    si,
-    no,
-    sisi
+    Iker,
+    Izaro,
+    Oliver,
+    Ivan,
+    Alejandro,
+    Andrea,
+    Joritz,
+    Imanol,
+    Sei,
+    Kai,
+    Chaplin,
+    Jonsey,
+    Marcelo,
+    Miaumanol,
 }
 public class NameSystem : GenericSystem
 {
