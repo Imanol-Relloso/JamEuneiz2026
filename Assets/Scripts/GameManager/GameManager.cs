@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 
     [Header("Managers")]
     public MenuManager menuManager;
-    public DayManager dayManager;
     public CatBoatManager catBoatManager;
 
     private void Awake()
@@ -28,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     public void StartDay()
     {
-        dayManager.StartDay();
+        DayManager.Instance.StartDay();
         catBoatManager.spawnCatBoat();
     }
 
@@ -39,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     public void nextDay()
     {
-        dayManager.NextDay();
+        DayManager.Instance.NextDay();
         StartDay();
     }
 

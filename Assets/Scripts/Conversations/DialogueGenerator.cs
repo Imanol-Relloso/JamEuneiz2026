@@ -1,68 +1,55 @@
+using Ink.Runtime;
 using System.Collections;
 using System.Drawing;
 using TMPro;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 public class DialogueGenerator : MonoBehaviour
 {
-    public TextMeshProUGUI DialogueText;
-    public string[] sentences;
-    private int index = 0;
-    public float dialogueSpeed;
-    public Name[] allNames;
-    public Name dialogueName;
-    public Country[] allCountries;
-    public Country dialogueCountry;
-    public Load[] allLoads;
-    public Load dialogueLoad;
-    public GameObject dialoguePanel;
-    public CatBoat catBoat;
+    private Name dialogueName;
+    private Country dialogueCountry;
+    private Load dialogueLoad;
+    private CatBoat catBoat;
 
+    private GameObject dialoguePanel;
 
+    public TextAsset ink;
+    private Story story;
+    public string[] sentences = { "dialogo1", "dialogo2", "dialogo3", "dialogo4" };
+
+    [SerializeField] public TMP_Text dialogueText;
+
+    private string knotRandom;
     void Start()
     {
-        dialogueName = transform.GetComponentInParent<CatBoat>().nameSystem.dialogueName;
+        catBoat = GetComponentInParent<CatBoat>();
 
-        dialogueCountry = transform.GetComponentInParent<CatBoat>().countrySystem.dialogueCountry;
+        dialogueName = catBoat.nameSystem.dialogueName;
 
-        dialogueLoad = transform.GetComponentInParent<CatBoat>().loadSystem.dialogueLoad;
+        dialogueCountry = catBoat.countrySystem.dialogueCountry;
+
+        dialogueLoad = catBoat.loadSystem.dialogueLoad;
+
+        SetDialogue();
 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SetDialogue()
     {
-       
+        story = new Story(ink.text);
+        story.variablesState["NOMBRE"] = dialogueName.ToString();
+        story.variablesState["PAIS"] = dialogueCountry.ToString();
+        story.variablesState["CARGA"] = dialogueLoad.ToString();
+        knotRandom = sentences[Random.Range(0, sentences.Length)];
     }
+    public void StartDialogue()
+    {
+        story.ChoosePathString(knotRandom);
 
-    public void FirstSentence()
-    {
-        string sentence = sentences[Random.Range(0, sentences.Length)];
-        
-        sentence = sentence.Replace("{NOMBRE}", dialogueName.ToString());
-    }
-    public void NextSentence()
-    {
-        if (index <= sentences.Length -1)
-        {
-            StartCoroutine(WriteSentence());
-        }
-        else
-        {
-            EndDialogue();
-        }
-    }
+        string texto = story.Continue();
+        dialogueText.text = texto;
 
-    public void EndDialogue()
-    {
-        dialoguePanel.SetActive(false); 
     }
-    IEnumerator WriteSentence()
-    {
-        foreach(char randomName in sentences[index].ToCharArray())
-        {
-            DialogueText.text += randomName;
-            yield return new WaitForSeconds(dialogueSpeed);
-        }
-        index++;
-    }
+    
+    
 }

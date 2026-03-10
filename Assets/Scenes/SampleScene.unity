@@ -190,7 +190,7 @@ Transform:
   m_GameObject: {fileID: 473404908}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.36751726, y: -0.1422593, z: -2.4160573}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -209,7 +209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuManager: {fileID: 1225328450}
-  dayManager: {fileID: 1626329460}
   catBoatManager: {fileID: 40920655}
 --- !u!1 &519420028
 GameObject:
@@ -461,9 +460,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d55cf1685bf004bba0b1803a84646d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameSprites: []
-  countrySprites: []
-  loadSprites: []
+  nameSprites:
+  - name: 0
+    sprite: {fileID: 21300000, guid: ecdc9f772d0c2744eac7bbc516a7c672, type: 3}
+  - name: 1
+    sprite: {fileID: 21300000, guid: 5c2c1fd271d0de646acaf7d2aac47d21, type: 3}
+  - name: 2
+    sprite: {fileID: 21300000, guid: 096934396adf86d418ea5c6a0912170b, type: 3}
+  - name: 3
+    sprite: {fileID: 21300000, guid: a487a5cb993d26a47a14de59c911520c, type: 3}
+  - name: 4
+    sprite: {fileID: 21300000, guid: 88d40409c3b447f4497bc536854a2e55, type: 3}
+  - name: 5
+    sprite: {fileID: 21300000, guid: 7119522e14e584241a398f0066be248c, type: 3}
+  - name: 6
+    sprite: {fileID: 21300000, guid: 3d3156a121e3d7947ad0433553c29160, type: 3}
+  - name: 7
+    sprite: {fileID: 21300000, guid: 0eb43710eda1fc84f88f02a58dcde43e, type: 3}
+  - name: 8
+    sprite: {fileID: 21300000, guid: 9aa3b657f84c94d4bae4c6471bab8528, type: 3}
+  - name: 9
+    sprite: {fileID: 21300000, guid: ecdc9f772d0c2744eac7bbc516a7c672, type: 3}
+  - name: 10
+    sprite: {fileID: 21300000, guid: 5c2c1fd271d0de646acaf7d2aac47d21, type: 3}
+  - name: 11
+    sprite: {fileID: 21300000, guid: 096934396adf86d418ea5c6a0912170b, type: 3}
+  - name: 12
+    sprite: {fileID: 21300000, guid: a487a5cb993d26a47a14de59c911520c, type: 3}
+  - name: 13
+    sprite: {fileID: 21300000, guid: 88d40409c3b447f4497bc536854a2e55, type: 3}
+  countrySprites:
+  - country: 0
+    sprite: {fileID: 0}
+  - country: 1
+    sprite: {fileID: 0}
+  - country: 2
+    sprite: {fileID: 0}
+  loadSprites:
+  - Load: 0
+    sprite: {fileID: 0}
+  - Load: 1
+    sprite: {fileID: 0}
 --- !u!4 &1097042713
 Transform:
   m_ObjectHideFlags: 0
@@ -473,7 +510,7 @@ Transform:
   m_GameObject: {fileID: 1097042711}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5927302, y: -0.364527, z: 158.34125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -505,7 +542,7 @@ Transform:
   m_GameObject: {fileID: 1225328448}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.36751726, y: -0.1422593, z: -2.4160573}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -571,7 +608,7 @@ Transform:
   m_GameObject: {fileID: 1626329459}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.36751726, y: -0.1422593, z: -2.4160573}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

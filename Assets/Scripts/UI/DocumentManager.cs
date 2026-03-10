@@ -6,7 +6,6 @@ public class DocumentManager : MonoBehaviour
 {
     public int id;
     private CatBoat catBoat;
-    private GameManager gameManager;
 
     [SerializeField] private Transform target;
     private float putDistance = 1f;
@@ -14,13 +13,7 @@ public class DocumentManager : MonoBehaviour
     void Start()
     {
         resetPosition = transform.position;
-        catBoat = GetComponent<CatBoat>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        catBoat = GetComponentInParent<CatBoat>();
     }
     public void OnMouseDown()
     {
@@ -45,11 +38,11 @@ public class DocumentManager : MonoBehaviour
                 Debug.Log("gatito no aprobado");
                 if (catBoat.IsValid())
                 {
-                    gameManager.CorrectGuess();
+                    GameManager.Instance.CorrectGuess();
                 }
                 else
                 {
-                    gameManager.IncorrectGuess();
+                    GameManager.Instance.IncorrectGuess();
                 }
             }
             else if (gameObject.GetComponent<DocumentManager>().id == 2)
@@ -57,11 +50,11 @@ public class DocumentManager : MonoBehaviour
                 Debug.Log("Gatito aprobado");
                 if (catBoat.IsValid())
                 {
-                    gameManager.CorrectGuess();
+                    GameManager.Instance.CorrectGuess();
                 }
                 else
                 {
-                    gameManager.IncorrectGuess();
+                    GameManager.Instance.IncorrectGuess();
                 }
             }
             else
