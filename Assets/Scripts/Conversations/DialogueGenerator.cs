@@ -21,10 +21,10 @@ public class DialogueGenerator : MonoBehaviour
 
     private string knotRandom;
     private float dialogueSpeed = 0.05f;
-    public bool isTyping = true;
+    public bool isTyping = false;
 
     private string texto;
-    public bool isEnded;
+    public bool isEnded = false;
     void Start()
     {
         catBoat = GetComponentInParent<CatBoat>();
@@ -36,7 +36,6 @@ public class DialogueGenerator : MonoBehaviour
         dialogueLoad = catBoat.loadSystem.dialogueLoad;
 
         SetDialogue();
-
     }
 
     private void SetDialogue()
@@ -50,7 +49,6 @@ public class DialogueGenerator : MonoBehaviour
     public void StartDialogue()
     {
         story.ChoosePathString(knotRandom);
-
         texto = story.Continue();
         StartCoroutine(WriteLine(texto));
         
@@ -60,6 +58,12 @@ public class DialogueGenerator : MonoBehaviour
         StopAllCoroutines();
         dialogueText.text = texto;
         isTyping = false;
+        isEnded = true;
+    }
+
+    public void EndDialogue()
+    {
+        dialogueText.text = "";
     }
 
     IEnumerator WriteLine(string texto)
@@ -72,6 +76,7 @@ public class DialogueGenerator : MonoBehaviour
             yield return new WaitForSeconds(dialogueSpeed);
         }
         isTyping = false;
+        isEnded = true;
     }
 
 }
