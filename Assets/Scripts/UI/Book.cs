@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 
@@ -8,6 +9,9 @@ public class Book : MonoBehaviour
     
     private bool activar = true;
     private GameObject libro;
+
+    public InputActionReference openBook;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,10 +23,22 @@ public class Book : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        /*if (Input.GetKeyDown(KeyCode.Tab))
         {
             abrirLibro(activar);
+        }*/
+    }
+
+
+    public void OpenBook(InputAction.CallbackContext callbackContext)
+    {
+        if(callbackContext.performed)
+        {
+            Debug.Log("Abrir libro");
+
+            abrirLibro(activar);
         }
+        
     }
 
     private void abrirLibro(bool n)
