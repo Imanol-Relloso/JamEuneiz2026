@@ -25,6 +25,7 @@ public class DialogueGenerator : MonoBehaviour
 
     private string texto;
     public bool isEnded = false;
+    public bool isStarted = false;
     void Start()
     {
         catBoat = GetComponentInParent<CatBoat>();
@@ -57,8 +58,6 @@ public class DialogueGenerator : MonoBehaviour
     {
         StopAllCoroutines();
         dialogueText.text = texto;
-        isTyping = false;
-        isEnded = true;
     }
 
     public void EndDialogue()
@@ -75,8 +74,6 @@ public class DialogueGenerator : MonoBehaviour
             dialogueText.text += letter;
             yield return new WaitForSeconds(dialogueSpeed);
         }
-        isTyping = false;
-        isEnded = true;
     }
 
 }
