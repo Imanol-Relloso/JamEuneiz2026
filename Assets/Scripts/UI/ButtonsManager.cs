@@ -71,20 +71,23 @@ public class ButtonsManager : MonoBehaviour
                 dialogueGenerator.StartDialogue();
                 dialogueGenerator.isEnded = false;
                 dialogueGenerator.isStarted = true;
+                AudioManager.Instance.PlayMeow();
            }
            else if (dialogueGenerator.isTyping && dialogueGenerator.isEnded == false)
            {
                 dialogueGenerator.AutomaticDialogue();
                 dialogueGenerator.isTyping = false;
                 dialogueGenerator.isEnded = true;
+                AudioManager.Instance.PlayMeow();
             }
-           else if (dialogueGenerator.isTyping == false && dialogueGenerator.isEnded && dialogueGenerator.isStarted)
+            else if (dialogueGenerator.isTyping == false && dialogueGenerator.isEnded && dialogueGenerator.isStarted)
             {
                 Debug.Log("entra");
                 dialogueGenerator.EndDialogue();
                 dialogueGenerator.isStarted = false;
                 dialogueGenerator.isEnded = true;
                 dialogueGenerator.isTyping = false;
+
             }
         }
 
