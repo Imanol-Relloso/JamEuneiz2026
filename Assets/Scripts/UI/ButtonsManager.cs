@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -64,7 +65,27 @@ public class ButtonsManager : MonoBehaviour
         }
         else if (hit.collider.gameObject == cat)
         {
-            dialogueGenerator.StartDialogue();
+
+            if (dialogueGenerator.isTyping == false && dialogueGenerator.isStarted == false)
+            {
+                dialogueGenerator.StartDialogue();
+                dialogueGenerator.isEnded = false;
+                dialogueGenerator.isStarted = true;
+           }
+           else if (dialogueGenerator.isTyping && dialogueGenerator.isEnded == false)
+           {
+                dialogueGenerator.AutomaticDialogue();
+                dialogueGenerator.isTyping = false;
+                dialogueGenerator.isEnded = true;
+            }
+           else if (dialogueGenerator.isTyping == false && dialogueGenerator.isEnded && dialogueGenerator.isStarted)
+            {
+                Debug.Log("entra");
+                dialogueGenerator.EndDialogue();
+                dialogueGenerator.isStarted = false;
+                dialogueGenerator.isEnded = true;
+                dialogueGenerator.isTyping = false;
+            }
         }
 
     }
