@@ -74,6 +74,9 @@ public class Day : MonoBehaviour
 
     public GameObject GetNextBoat()
     {
+        if (boatsQueue.Count == 0)
+            return null;
+
         GameObject boat = boatsQueue[0];
         boatsQueue.RemoveAt(0);
         return boat;

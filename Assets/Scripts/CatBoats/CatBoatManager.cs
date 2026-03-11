@@ -11,6 +11,8 @@ public class CatBoatManager : MonoBehaviour
 
         if (currentDay == null || !currentDay.HasBoatsLeft())
         {
+            if (currentCatBoat != null)
+                Destroy(currentCatBoat);
             GameManager.Instance.nextDay();
             return;
         }
