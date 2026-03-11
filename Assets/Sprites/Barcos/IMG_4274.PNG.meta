@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 5b2ffa91f13fbf448afa1ac1d05f1d61
+guid: 20538cc0d8095864c804ba586490e0e0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7688808140211946293
-    second: bocadillo_0
-  - first:
-      213: 540860785267377029
-    second: bocadillo_1
+      213: 1292160889439023757
+    second: IMG_4274_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,45 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bocadillo_0
+      name: IMG_4274_0
       rect:
         serializedVersion: 2
-        x: 175
-        y: 1
-        width: 3158
-        height: 2479
+        x: 0
+        y: 226
+        width: 3508
+        height: 2254
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5330777344224ba60800000000000000
-      internalID: 7688808140211946293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bocadillo_1
-      rect:
-        serializedVersion: 2
-        x: 442
-        y: 0
-        width: 424
-        height: 415
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5830dc2c406818700800000000000000
-      internalID: 540860785267377029
+      spriteID: d827aa79b7daee110800000000000000
+      internalID: 1292160889439023757
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: dc5218988b13288468a7fd647c45eb54
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bocadillo_0: 7688808140211946293
-      bocadillo_1: 540860785267377029
+      IMG_4274_0: 1292160889439023757
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

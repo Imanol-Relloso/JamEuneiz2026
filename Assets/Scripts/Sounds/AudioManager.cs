@@ -2,12 +2,12 @@ using UnityEngine;
 using System;
 using Random = UnityEngine.Random;
 
-public class AudioManager: MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
-    
+
     public AudioClip[] musicSounds, meowSounds, sealSounds, boxSounds, doorSound;
-    public AudioSource musicSource ,sfxSource;
+    public AudioSource musicSource, sfxSource;
 
     private AudioClip actualSound;
 
@@ -38,7 +38,7 @@ public class AudioManager: MonoBehaviour
         }
         else
         {
-           // musicSource.clip = s.clip;
+            // musicSource.clip = s.clip;
             musicSource.Play();
         }
     }
@@ -58,12 +58,12 @@ public class AudioManager: MonoBehaviour
 
     public void PlayMeow()
     {
-        if(sfxSource.isPlaying)
+        if (sfxSource.isPlaying)
         {
             sfxSource.Stop();
             return;
         }
-        if(actualSound == null)
+        if (actualSound == null)
         {
             int index = Random.Range(0, meowSounds.Length);
             actualSound = meowSounds[index];
@@ -74,11 +74,20 @@ public class AudioManager: MonoBehaviour
 
     public void PlayBox()
     {
-        sfxSource.PlayOneShot(boxSounds[0]);   
+        sfxSource.PlayOneShot(boxSounds[0]);
     }
 
     public void PlayDoor()
     {
         sfxSource.PlayOneShot(doorSound[0]);
     }
+    public void PlayRedSeal()
+    {
+        sfxSource.PlayOneShot(sealSounds[0]);
+    }
+    public void PlayGreenSeal()
+    {
+        sfxSource.PlayOneShot(sealSounds[1]);
+    }
+    
 }

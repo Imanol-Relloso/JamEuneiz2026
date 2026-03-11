@@ -35,7 +35,7 @@ public class DocumentManager : MonoBehaviour
             transform.position = target.position;
             if (gameObject.GetComponent<DocumentManager>().id == 1)
             {
-                Debug.Log("gatito no aprobado");
+                AudioManager.Instance.PlayRedSeal();
                 if (catBoat.IsValid())
                 {
                     GameManager.Instance.CorrectGuess();
@@ -47,7 +47,7 @@ public class DocumentManager : MonoBehaviour
             }
             else if (gameObject.GetComponent<DocumentManager>().id == 2)
             {
-                Debug.Log("Gatito aprobado");
+                AudioManager.Instance.PlayGreenSeal();
                 if (catBoat.IsValid())
                 {
                     GameManager.Instance.CorrectGuess();
@@ -56,10 +56,6 @@ public class DocumentManager : MonoBehaviour
                 {
                     GameManager.Instance.IncorrectGuess();
                 }
-            }
-            else
-            {
-                Debug.Log("no pasa nada");
             }
         }
         else
