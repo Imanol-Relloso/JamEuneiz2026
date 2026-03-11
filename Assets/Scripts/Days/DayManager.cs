@@ -22,6 +22,8 @@ public class DayManager : MonoBehaviour
     [SerializeField] private float fadeTime = 1f;
     [SerializeField] private float textTime = 2f;
 
+    private TutorialCoroutines tutorialCoroutines;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -64,6 +66,12 @@ public class DayManager : MonoBehaviour
     {
         yield return StartCoroutine(DayTransition());
 
+        if (days[currentDay].tutorialDay)
+        {
+            tutorialCoroutines = GetComponent<TutorialCoroutines>();
+            StartCoroutine(Tutorial()); 
+        }
+
         GameManager.Instance.catBoatManager.spawnCatBoat();
     }
 
@@ -96,5 +104,12 @@ public class DayManager : MonoBehaviour
             t += Time.deltaTime;
             yield return null;
         }
+    }
+
+    private IEnumerator Tutorial()
+    {
+        //AQUI PONES COSAS OLIVER 
+        //LLAMAS A LAS CORRUTINAS DEL TUTORIAL
+        yield return null;
     }
 }

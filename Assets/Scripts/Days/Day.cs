@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Day : MonoBehaviour
 {
-    [SerializeField] private bool tutorialDay;
+    [SerializeField] public bool tutorialDay;
 
     [Header("CONDICIONES DEL DIA")]
     [SerializeField] private Name[] notAllowedCat;
