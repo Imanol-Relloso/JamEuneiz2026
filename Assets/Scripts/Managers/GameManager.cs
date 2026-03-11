@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour
     public void StartDay()
     {
         DayManager.Instance.StartDay();
-        catBoatManager.spawnCatBoat();
     }
 
     public void NextBoat()
@@ -39,7 +38,6 @@ public class GameManager : MonoBehaviour
     public void nextDay()
     {
         DayManager.Instance.NextDay();
-        StartDay();
     }
 
     public void CorrectGuess()
