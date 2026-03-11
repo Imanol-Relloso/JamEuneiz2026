@@ -5,6 +5,7 @@ public class NameSprite
 {
     public Name name;
     public Sprite sprite;
+    public AudioClip sound;
 }
 [System.Serializable]
 public class CountrySprite

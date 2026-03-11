@@ -24,6 +24,7 @@ public class NameSystem : GenericSystem
     public Name dialogueName;
 
     public Sprite catSprite;
+    public AudioClip catAudio;
 
     public void SetValues(bool errorNombre, bool errorBlackList)
     {
@@ -46,11 +47,16 @@ public class NameSystem : GenericSystem
                 dialogueName = catName;
         }
         SetSprite();
+        SetAudio();
     }
 
     private void SetSprite()
     {
         catSprite = SpriteDictionary.Instance.GetNameSprite(catName);
+    }
+    private void SetAudio()
+    {
+        catAudio = SpriteDictionary.Instance.GetNameAudio(catName);
     }
 
     public override bool IsCorrect()

@@ -18,6 +18,7 @@ public class SpriteDictionary : MonoBehaviour
     private static Dictionary<Name, Sprite> nameDict;
     private static Dictionary<Country, Sprite> countryDict;
     private static Dictionary<Load, Sprite> loadDict;
+    private static Dictionary<Name, AudioClip> nameAudio;
 
     private void Awake()
     {
@@ -38,6 +39,7 @@ public class SpriteDictionary : MonoBehaviour
         nameDict = new Dictionary<Name, Sprite>();
         countryDict = new Dictionary<Country, Sprite>();
         loadDict = new Dictionary<Load, Sprite>();
+        nameAudio = new Dictionary<Name, AudioClip>();
 
         foreach (NameSprite nameSprite in nameSprites)
             nameDict[nameSprite.name] = nameSprite.sprite;
@@ -45,6 +47,8 @@ public class SpriteDictionary : MonoBehaviour
             countryDict[countrySprite.country] = countrySprite.sprite;
         foreach (LoadSprite loadSprite in loadSprites)
             loadDict[loadSprite.Load] = loadSprite.sprite;
+        foreach (NameSprite nameSprite in nameSprites)
+            nameAudio[nameSprite.name] = nameSprite.sound;
     }
 
     public Sprite GetNameSprite(Name name)
@@ -58,5 +62,9 @@ public class SpriteDictionary : MonoBehaviour
     public Sprite GetLoadSprite(Load load)
     {
         return loadDict[load];
+    }
+    public AudioClip GetNameAudio(Name name)
+    {
+        return nameAudio[name];
     }
 }
