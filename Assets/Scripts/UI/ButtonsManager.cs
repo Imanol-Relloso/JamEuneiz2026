@@ -45,6 +45,7 @@ public class ButtonsManager : MonoBehaviour
         }
         else if (hit.collider.gameObject == boatDoor)
         {
+            AudioManager.Instance.PlayDoor();
             boat.SetActive(false);
             documentDisplayed.SetActive(false);
             document.SetActive(false);
@@ -55,6 +56,7 @@ public class ButtonsManager : MonoBehaviour
         }
         else if (hit.collider.gameObject == deckDoor)
         {
+            AudioManager.Instance.PlayDoor();
             boat.SetActive(true);
             documentDisplayed.SetActive(false);
             document.SetActive(true);
