@@ -15,6 +15,7 @@ public class BoxSpriteManager : MonoBehaviour
 
     void OnMouseDown()
     {
+        AudioManager.Instance.PlayBox();
         if (isOpen)
         {
             sr.sprite = closeBox;

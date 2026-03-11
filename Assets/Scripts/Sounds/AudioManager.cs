@@ -6,7 +6,7 @@ public class AudioManager: MonoBehaviour
 {
     public static AudioManager Instance;
     
-    public AudioClip[] musicSounds, meowSounds, sealSounds;
+    public AudioClip[] musicSounds, meowSounds, sealSounds, boxSounds, doorSound;
     public AudioSource musicSource ,sfxSource;
 
     private AudioClip actualSound;
@@ -70,5 +70,15 @@ public class AudioManager: MonoBehaviour
         }
         sfxSource.clip = actualSound;
         sfxSource.Play();
+    }
+
+    public void PlayBox()
+    {
+        sfxSource.PlayOneShot(boxSounds[0]);   
+    }
+
+    public void PlayDoor()
+    {
+        sfxSource.PlayOneShot(doorSound[0]);
     }
 }
