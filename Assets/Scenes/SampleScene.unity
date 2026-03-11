@@ -735,32 +735,46 @@ MonoBehaviour:
   nameSprites:
   - name: 0
     sprite: {fileID: 21300000, guid: ecdc9f772d0c2744eac7bbc516a7c672, type: 3}
+    sound: {fileID: 0}
   - name: 1
     sprite: {fileID: 21300000, guid: 5c2c1fd271d0de646acaf7d2aac47d21, type: 3}
+    sound: {fileID: 0}
   - name: 2
     sprite: {fileID: 21300000, guid: 096934396adf86d418ea5c6a0912170b, type: 3}
+    sound: {fileID: 0}
   - name: 3
     sprite: {fileID: 21300000, guid: a487a5cb993d26a47a14de59c911520c, type: 3}
+    sound: {fileID: 0}
   - name: 4
     sprite: {fileID: 21300000, guid: 88d40409c3b447f4497bc536854a2e55, type: 3}
+    sound: {fileID: 0}
   - name: 5
     sprite: {fileID: 21300000, guid: 7119522e14e584241a398f0066be248c, type: 3}
+    sound: {fileID: 0}
   - name: 6
     sprite: {fileID: 21300000, guid: 3d3156a121e3d7947ad0433553c29160, type: 3}
+    sound: {fileID: 0}
   - name: 7
     sprite: {fileID: 21300000, guid: 0eb43710eda1fc84f88f02a58dcde43e, type: 3}
+    sound: {fileID: 0}
   - name: 8
     sprite: {fileID: 21300000, guid: 9aa3b657f84c94d4bae4c6471bab8528, type: 3}
+    sound: {fileID: 0}
   - name: 9
     sprite: {fileID: 21300000, guid: ecdc9f772d0c2744eac7bbc516a7c672, type: 3}
+    sound: {fileID: 0}
   - name: 10
     sprite: {fileID: 21300000, guid: 5c2c1fd271d0de646acaf7d2aac47d21, type: 3}
+    sound: {fileID: 0}
   - name: 11
     sprite: {fileID: 21300000, guid: 096934396adf86d418ea5c6a0912170b, type: 3}
+    sound: {fileID: 0}
   - name: 12
     sprite: {fileID: 21300000, guid: a487a5cb993d26a47a14de59c911520c, type: 3}
+    sound: {fileID: 0}
   - name: 13
     sprite: {fileID: 21300000, guid: 88d40409c3b447f4497bc536854a2e55, type: 3}
+    sound: {fileID: 0}
   countrySprites:
   - country: 0
     sprite: {fileID: 0}
