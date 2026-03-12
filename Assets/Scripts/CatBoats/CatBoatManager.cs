@@ -2,9 +2,20 @@ using UnityEngine;
 
 public class CatBoatManager : MonoBehaviour
 {
+    public static CatBoatManager instance; 
+
     [SerializeField] private Transform spawnPoint;
 
-    private GameObject currentBoat;
+    public GameObject currentBoat;
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+    }
 
     public void SpawnBoat()
     {

@@ -48,6 +48,6 @@ public class DialogueGenerator : MonoBehaviour
     public void StartDialogue()
     {
         if(!EveryDialogueGenerator.Instance.dialogueActive)
-            EveryDialogueGenerator.Instance.StartDialogue(story, knotRandom, dialogueText);
+            EveryDialogueGenerator.Instance.StartDialogue(story, knotRandom, dialogueText, CatBoatManager.instance.currentBoat.GetComponent<CatBoat>().nameSystem.catAudio);
     }
 }
