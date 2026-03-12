@@ -47,6 +47,7 @@ public class DialogueGenerator : MonoBehaviour
     }
     public void StartDialogue()
     {
-        EveryDialogueGenerator.Instance.StartDialogue(story, knotRandom, dialogueText);
+        if(!EveryDialogueGenerator.Instance.dialogueActive)
+            EveryDialogueGenerator.Instance.StartDialogue(story, knotRandom, dialogueText);
     }
 }
