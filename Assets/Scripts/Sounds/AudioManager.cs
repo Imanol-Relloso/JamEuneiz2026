@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] musicSounds, sealSounds, boxSounds, doorSound;
     public AudioSource musicSource, sfxSource;
 
-    private AudioClip actualSound;
+    public AudioClip MenuTheme, MainTheme;
+
 
     private void Awake()
     {
@@ -26,22 +28,32 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        PlayMusic("");
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
     }
-    public void PlayMusic(string name)
+    public void PlayMusic(AudioClip clip)
     {
-        AudioClip s = Array.Find(musicSounds, x => x.name == name);
-
-        if (s == null)
+        if (musicSource.clip == clip)
         {
-            Debug.Log("Sound not found");
+            return;
         }
-        else
+        musicSource.clip = clip;
+        musicSource.Play();
+    }
+
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "MainMenu" || scene.name == "Credits" || scene.name == "Options")
         {
-            // musicSource.clip = s.clip;
-            musicSource.Play();
+            PlayMusic(MenuTheme);
+        }
+        else if (scene.name == "SampleScene")
+        {
+            PlayMusic(MainTheme);
         }
     }
+
 
     public void PlayMeow(AudioClip clip)
     {
