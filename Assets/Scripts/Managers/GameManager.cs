@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("Managers")]
-    public MenuManager menuManager;
+    public DayManager dayManager;
     public CatBoatManager catBoatManager;
 
     private void Awake()
@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        Instance = this;
 
+        Instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -27,26 +27,36 @@ public class GameManager : MonoBehaviour
 
     public void StartDay()
     {
-        DayManager.Instance.StartDay();
+        dayManager.StartDay();
     }
 
     public void NextBoat()
     {
-        catBoatManager.spawnCatBoat();
+        catBoatManager.SpawnBoat();
     }
 
-    public void nextDay()
+    public void NextDay()
     {
-        DayManager.Instance.NextDay();
+        dayManager.NextDay();
     }
 
     public void CorrectGuess()
     {
-        //Suma puntos
+        if (dayManager.GetCurrentDay().tutorialDay)
+        {
+            StartCoroutine(dayManager.tutorial.CorrectBoat());
+        }
+
         NextBoat();
     }
+
     public void IncorrectGuess()
     {
+        if (dayManager.GetCurrentDay().tutorialDay)
+        {
+            StartCoroutine(dayManager.tutorial.WrongBoat());
+        }
+
         NextBoat();
     }
 }

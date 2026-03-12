@@ -22,7 +22,9 @@ public class DayManager : MonoBehaviour
     [SerializeField] private float fadeTime = 1f;
     [SerializeField] private float textTime = 2f;
 
-    private TutorialCoroutines tutorialCoroutines;
+    public TutorialCoroutines tutorial;
+
+    [SerializeField] private GameObject catDialogueCanvas;
 
     private void Awake()
     {
@@ -35,15 +37,15 @@ public class DayManager : MonoBehaviour
     }
     public void StartDay()
     {
-        StartCoroutine(StartDayCoroutine());
-
         if (currentDay < 0 || currentDay >= days.Length)
         {
             Debug.Log("No hay más días disponibles");
             return;
         }
 
-        days[currentDay].InitializeDay();
+        days[currentDay].InitializeDay(); 
+
+        StartCoroutine(StartDayCoroutine());
     }
 
     public void NextDay()
@@ -54,7 +56,7 @@ public class DayManager : MonoBehaviour
 
     public DayConditions GetDayConditions()
     {
-        return GetCurrentDay().GetCoditions();
+        return GetCurrentDay().dayConditions;
     }
 
     public Day GetCurrentDay()
@@ -68,11 +70,11 @@ public class DayManager : MonoBehaviour
 
         if (days[currentDay].tutorialDay)
         {
-            tutorialCoroutines = GetComponent<TutorialCoroutines>();
-            StartCoroutine(Tutorial()); 
+            tutorial = days[currentDay].GetComponent<TutorialCoroutines>();
+            yield return StartCoroutine(tutorial.StartTutorial(catDialogueCanvas));
         }
 
-        GameManager.Instance.catBoatManager.spawnCatBoat();
+        GameManager.Instance.NextBoat();
     }
 
     private IEnumerator DayTransition()
@@ -104,12 +106,5 @@ public class DayManager : MonoBehaviour
             t += Time.deltaTime;
             yield return null;
         }
-    }
-
-    private IEnumerator Tutorial()
-    {
-        //AQUI PONES COSAS OLIVER 
-        //LLAMAS A LAS CORRUTINAS DEL TUTORIAL
-        yield return null;
     }
 }

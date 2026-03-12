@@ -17,7 +17,7 @@ public class Day : MonoBehaviour
     [SerializeField] private int boatsWithErrors;
 
     private List<GameObject> boatsQueue;
-    private DayConditions dayConditions;
+    public DayConditions dayConditions;
 
     public void InitializeDay()
     {
@@ -84,10 +84,5 @@ public class Day : MonoBehaviour
     public bool HasBoatsLeft()
     {
         return boatsQueue != null && boatsQueue.Count > 0;
-    }
-
-    public DayConditions GetCoditions()
-    {
-        return dayConditions;
     }
 }

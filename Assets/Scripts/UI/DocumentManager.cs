@@ -36,7 +36,7 @@ public class DocumentManager : MonoBehaviour
             if (gameObject.GetComponent<DocumentManager>().id == 1)
             {
                 AudioManager.Instance.PlayRedSeal();
-                if (catBoat.IsValid())
+                if (!catBoat.IsValid())
                 {
                     GameManager.Instance.CorrectGuess();
                 }

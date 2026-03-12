@@ -3,25 +3,30 @@ using UnityEngine;
 public class CatBoatManager : MonoBehaviour
 {
     [SerializeField] private Transform spawnPoint;
-    private GameObject currentCatBoat;
 
-    public void spawnCatBoat()
+    private GameObject currentBoat;
+
+    public void SpawnBoat()
     {
         Day currentDay = DayManager.Instance.GetCurrentDay();
 
-        if (currentDay == null || !currentDay.HasBoatsLeft())
+        if (!currentDay.HasBoatsLeft())
         {
-            if (currentCatBoat != null)
-                Destroy(currentCatBoat);
-            GameManager.Instance.nextDay();
+            ClearBoat();
+            GameManager.Instance.NextDay();
             return;
         }
 
-        if (currentCatBoat != null)
-            Destroy(currentCatBoat);
+        ClearBoat();
 
         GameObject prefab = currentDay.GetNextBoat();
 
-        currentCatBoat = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
+        currentBoat = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
+    }
+
+    private void ClearBoat()
+    {
+        if (currentBoat != null)
+            Destroy(currentBoat);
     }
 }

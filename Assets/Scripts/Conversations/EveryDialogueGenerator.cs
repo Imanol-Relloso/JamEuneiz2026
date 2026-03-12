@@ -1,7 +1,6 @@
 using Ink.Runtime;
 using System.Collections;
 using TMPro;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class EveryDialogueGenerator : MonoBehaviour
@@ -11,7 +10,7 @@ public class EveryDialogueGenerator : MonoBehaviour
     [SerializeField]private float dialogueSpeed = 0.05f;
 
     private bool isTyping = false;
-    private bool dialogueActive = false;
+    public bool dialogueActive = false;
 
     private Coroutine typingCoroutine;
     private string currentText;
