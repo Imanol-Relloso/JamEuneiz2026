@@ -38,11 +38,13 @@ public class DocumentManager : MonoBehaviour
                 AudioManager.Instance.PlayRedSeal();
                 if (catBoat.IsValid())
                 {
-                    GameManager.Instance.CorrectGuess();
+                    GameManager.Instance.IncorrectGuess();
+
                 }
                 else
                 {
-                    GameManager.Instance.IncorrectGuess();
+                    GameManager.Instance.CorrectGuess();
+
                 }
             }
             else if (gameObject.GetComponent<DocumentManager>().id == 2)
