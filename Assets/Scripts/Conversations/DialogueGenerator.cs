@@ -20,8 +20,6 @@ public class DialogueGenerator : MonoBehaviour
     [SerializeField] public TMP_Text dialogueText;
 
     private string knotRandom;
-    private float dialogueSpeed = 0.05f;
-    public bool isTyping = false;
 
     private string texto;
     public bool isEnded = false;
@@ -49,31 +47,6 @@ public class DialogueGenerator : MonoBehaviour
     }
     public void StartDialogue()
     {
-        story.ChoosePathString(knotRandom);
-        texto = story.Continue();
-        StartCoroutine(WriteLine(texto));
-        
+        EveryDialogueGenerator.Instance.StartDialogue(story, knotRandom, dialogueText);
     }
-    public void AutomaticDialogue()
-    {
-        StopAllCoroutines();
-        dialogueText.text = texto;
-    }
-
-    public void EndDialogue()
-    {
-        dialogueText.text = "";
-    }
-
-    IEnumerator WriteLine(string texto)
-    {
-        isTyping = true;
-        dialogueText.text = "";
-        foreach (char letter in texto.ToCharArray())
-        {
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(dialogueSpeed);
-        }
-    }
-
 }
