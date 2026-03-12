@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    public AudioClip[] musicSounds, meowSounds, sealSounds, boxSounds, doorSound;
+    public AudioClip[] musicSounds, sealSounds, boxSounds, doorSound;
     public AudioSource musicSource, sfxSource;
 
     private AudioClip actualSound;
@@ -43,33 +43,21 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySFX(string name) // Esto es para los otros sonidos que no son randomizados, de esto me encargoyo, que no hay proeblams cpn esto
+    public void PlayMeow(AudioClip clip)
     {
-        AudioClip s = Array.Find(meowSounds, x => x.name == name);
+        if (clip == null) return;
 
-        if (s == null)
-        {
-            Debug.Log("Sound not found");
-        }
-        else
-        {
-        }
+        sfxSource.clip = clip;
+        sfxSource.loop = true;
+        sfxSource.Play();
     }
 
-    public void PlayMeow()
+    public void StopMeow()
     {
+        sfxSource.loop = false;
+
         if (sfxSource.isPlaying)
-        {
             sfxSource.Stop();
-            return;
-        }
-        if (actualSound == null)
-        {
-            int index = Random.Range(0, meowSounds.Length);
-            actualSound = meowSounds[index];
-        }
-        sfxSource.clip = actualSound;
-        sfxSource.Play();
     }
 
     public void PlayBox()

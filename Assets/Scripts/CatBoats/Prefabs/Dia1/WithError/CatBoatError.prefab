@@ -52,6 +52,8 @@ MonoBehaviour:
   - dialogo3
   - dialogo4
   dialogueText: {fileID: 8519522484083665644}
+  isEnded: 0
+  isStarted: 0
 --- !u!1 &221487177354355011
 GameObject:
   m_ObjectHideFlags: 0

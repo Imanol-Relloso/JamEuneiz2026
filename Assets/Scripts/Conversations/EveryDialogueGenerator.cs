@@ -26,7 +26,7 @@ public class EveryDialogueGenerator : MonoBehaviour
         }
         Instance = this;
     }
-    public void StartDialogue(Story story, string text, TMP_Text dialogueText)
+    public void StartDialogue(Story story, string text, TMP_Text dialogueText, AudioClip audioClip)
     {
         currentStory = story;
         currentTmp = dialogueText;
@@ -37,20 +37,24 @@ public class EveryDialogueGenerator : MonoBehaviour
         if (typingCoroutine != null)
             StopCoroutine(typingCoroutine);
 
-        typingCoroutine = StartCoroutine(WriteLine(currentText));
+        typingCoroutine = StartCoroutine(WriteLine(currentText, audioClip));
 
         dialogueActive = true;
     }
-    private IEnumerator WriteLine(string text)
+    private IEnumerator WriteLine(string text, AudioClip audioClip)
     {
         isTyping = true;
         currentTmp.text = "";
+
+        AudioManager.Instance.PlayMeow(audioClip);
 
         foreach (char letter in text.ToCharArray())
         {
             currentTmp.text += letter;
             yield return new WaitForSeconds(dialogueSpeed);
         }
+
+        AudioManager.Instance.StopMeow();
 
         isTyping = false;
     }
@@ -61,6 +65,8 @@ public class EveryDialogueGenerator : MonoBehaviour
 
         currentTmp.text = currentText;
         isTyping = false;
+
+        AudioManager.Instance.StopMeow();
     }
 
     public void EndDialogue()
@@ -69,6 +75,8 @@ public class EveryDialogueGenerator : MonoBehaviour
             currentTmp.text = "";
 
         dialogueActive = false;
+
+        AudioManager.Instance.StopMeow();
     }
 
     public void Click()

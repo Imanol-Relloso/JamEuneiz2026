@@ -68,7 +68,6 @@ public class ButtonsManager : MonoBehaviour
         else if (hit.collider.gameObject == cat)
         {
             dialogueGenerator.StartDialogue();
-            AudioManager.Instance.PlayMeow();
         }
 
     }

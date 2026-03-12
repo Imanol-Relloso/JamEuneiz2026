@@ -11,16 +11,17 @@ public class TutorialCoroutines : MonoBehaviour
 
     private Story tutorialStory;
 
+    [SerializeField] private AudioClip audioGatoTutorial;
+
     public IEnumerator StartTutorial(GameObject canvas)
     {
         tutorialStory = new Story(tutorialInk.text);
-
 
         catDialogueCanvas = canvas;
         textPos = catDialogueCanvas.GetComponentInChildren<TMP_Text>();
 
         catDialogueCanvas.SetActive(true);
-        EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "inicio", textPos);
+        EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "inicio", textPos, audioGatoTutorial);
 
         while (EveryDialogueGenerator.Instance.dialogueActive)
             yield return null;
@@ -30,7 +31,7 @@ public class TutorialCoroutines : MonoBehaviour
     public IEnumerator CorrectBoat()
     {
         catDialogueCanvas.SetActive(true);
-        EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "acierto", textPos);
+        EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "acierto", textPos, audioGatoTutorial);
         while (EveryDialogueGenerator.Instance.dialogueActive)
             yield return null;
         catDialogueCanvas.SetActive(false);
@@ -39,7 +40,7 @@ public class TutorialCoroutines : MonoBehaviour
     public IEnumerator WrongBoat()
     {
         catDialogueCanvas.SetActive(true);
-        EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "fallo", textPos);
+        EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "fallo", textPos, audioGatoTutorial);
         while (EveryDialogueGenerator.Instance.dialogueActive)
             yield return null;
         catDialogueCanvas.SetActive(false);
