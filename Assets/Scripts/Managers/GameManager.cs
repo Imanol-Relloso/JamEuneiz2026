@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [Header("Managers")]
     public DayManager dayManager;
     public CatBoatManager catBoatManager;
+    public GameObject coinManger;
 
     private void Awake()
     {
@@ -22,7 +23,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+
         StartDay();
+
     }
 
     public void StartDay()
@@ -42,11 +45,13 @@ public class GameManager : MonoBehaviour
 
     public void CorrectGuess()
     {
+
         if (dayManager.GetCurrentDay().tutorialDay)
         {
             StartCoroutine(dayManager.tutorial.CorrectBoat());
         }
 
+        coinManger.GetComponent<CoinManger>().SumarDinero();
         NextBoat();
     }
 

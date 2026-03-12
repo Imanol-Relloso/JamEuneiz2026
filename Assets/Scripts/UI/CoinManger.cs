@@ -10,10 +10,7 @@ public class CoinManger : MonoBehaviour
     void Start()
     {
         texto = this.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        for(int i = 0; i < this.transform.childCount; i++)
-        {
-            this.transform.GetChild(i).gameObject.SetActive(false);
-        }
+        ApagarEncender(true);
     }
 
     // Update is called once per frame
@@ -27,19 +24,25 @@ public class CoinManger : MonoBehaviour
         texto.text = "X" + dinero.ToString();
     }
 
-    public void SumerDiner(int sumar)
+    public void SumarDinero()
     {
-        dinero += sumar;
+        dinero += 100;
+
         ActualizarMarcador();
+    }
+
+    public void ApagarEncender(bool booleana)
+    {
+        for (int i = 0; i < this.transform.childCount; i++)
+        {
+            this.transform.GetChild(i).gameObject.SetActive(booleana);
+        }
     }
 
     public void RestartDinero()
     {
         dinero = 0;
-        for (int i = 0; i < this.transform.childCount; i++)
-        {
-            this.transform.GetChild(i).gameObject.SetActive(true);
-        }
+        ApagarEncender(true);
         ActualizarMarcador();
     }
 }

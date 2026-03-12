@@ -585,6 +585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuManager: {fileID: 1225328450}
   catBoatManager: {fileID: 40920655}
+  coinManger: {fileID: 1172023294}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
