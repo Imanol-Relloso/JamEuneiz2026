@@ -3,10 +3,21 @@ using TMPro;
 
 public class CoinManger : MonoBehaviour
 {
-
-    private int dinero = 0;
+    public static CoinManger Instance;
+    public int dinero = 0;
     private TextMeshProUGUI texto;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
     void Start()
     {
         texto = this.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
@@ -26,7 +37,7 @@ public class CoinManger : MonoBehaviour
 
     public void SumarDinero()
     {
-        dinero += 100;
+        dinero += 10;
 
         ActualizarMarcador();
     }

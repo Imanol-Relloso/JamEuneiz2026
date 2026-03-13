@@ -130,7 +130,10 @@ public class DayManager : MonoBehaviour
 
         catDialogueCanvas.SetActive(true);
 
-        if (GetCurrentDay().errores < 3)
+
+        if (currentDay + 1 >= days.Length)
+            EveryDialogueGenerator.Instance.StartDialogue(dailyStory, "final", textPos, tutorialCatSound);
+        else if (GetCurrentDay().errores < 3)
             EveryDialogueGenerator.Instance.StartDialogue(dailyStory, "daily1", textPos, tutorialCatSound);
         else
             EveryDialogueGenerator.Instance.StartDialogue(dailyStory, "daily2", textPos, tutorialCatSound);
@@ -144,5 +147,6 @@ public class DayManager : MonoBehaviour
     {
         dailyStory = new Story(dailyInk.text);
         dailyStory.variablesState["ERROR"] = GetCurrentDay().errores.ToString();
+        dailyStory.variablesState["FISH"] = CoinManger.Instance.dinero.ToString();
     }
 }

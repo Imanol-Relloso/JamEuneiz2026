@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     [Header("Managers")]
     public DayManager dayManager;
     public CatBoatManager catBoatManager;
-    public GameObject coinManger;
 
     private void Awake()
     {
@@ -24,9 +23,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-
         StartDay();
-
     }
 
     public void StartDay()
@@ -55,7 +52,7 @@ public class GameManager : MonoBehaviour
         }
 
         if (correct)
-            coinManger.GetComponent<CoinManger>().SumarDinero();
+            CoinManger.Instance.SumarDinero();
         else
             DayManager.Instance.GetCurrentDay().errores++;
 
