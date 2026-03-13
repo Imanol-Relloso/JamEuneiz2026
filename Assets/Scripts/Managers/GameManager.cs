@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
 
         if (correct)
             coinManger.GetComponent<CoinManger>().SumarDinero();
+        else
+            DayManager.Instance.GetCurrentDay().errores++;
 
         NextBoat();
     }

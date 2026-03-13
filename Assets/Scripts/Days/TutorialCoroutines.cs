@@ -78,10 +78,13 @@ public class TutorialCoroutines : MonoBehaviour
     {
         catDialogueCanvas.SetActive(true);
 
-        EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "final", textPos, audioGatoTutorial);
+        if (DayManager.Instance.GetCurrentDay().errores < 3)
+            EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "final1", textPos, audioGatoTutorial);
+        else
+            EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "final2", textPos, audioGatoTutorial);
 
         while (EveryDialogueGenerator.Instance.dialogueActive)
-            yield return null;
+                yield return null;
 
         catDialogueCanvas.SetActive(false);
 

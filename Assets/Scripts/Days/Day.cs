@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class Day : MonoBehaviour
 {
     [SerializeField] public bool tutorialDay;
+    public int errores;
 
     [Header("CONDICIONES DEL DIA")]
     [SerializeField] private Name[] notAllowedCat;
@@ -21,6 +22,7 @@ public class Day : MonoBehaviour
 
     public void InitializeDay()
     {
+        errores = 0;
         SetConditios();
         GenerateQueue();
     }

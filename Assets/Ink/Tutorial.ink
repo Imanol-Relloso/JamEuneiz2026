@@ -43,7 +43,12 @@ Hmm... Ese gato te ha mentido. Revisa mejor los documentos, su nombre no coincid
 
 -> END
 
-=== final ===
+=== final1 ===
 Y ese era el último barco. Buen trabajo. Chao pescao.
+
+-> END
+
+=== final2 ===
+Hoy has metido la pata demasiadas veces. Creo que no te vendría mal repetir el día para entender como funciona tu trabajo.
 
 -> END

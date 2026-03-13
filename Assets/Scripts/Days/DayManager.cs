@@ -1,6 +1,8 @@
+using Ink.Runtime;
 using Microsoft.Unity.VisualStudio.Editor;
 using System;
 using System.Collections;
+using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,6 +27,10 @@ public class DayManager : MonoBehaviour
     public TutorialCoroutines tutorial;
 
     [SerializeField] private GameObject catDialogueCanvas;
+    [SerializeField] private TextAsset dailyInk;
+    [SerializeField] private AudioClip tutorialCatSound;
+    private TMP_Text textPos;
+    private Story dailyStory;
 
     private void Awake()
     {
@@ -34,6 +40,10 @@ public class DayManager : MonoBehaviour
             return;
         }
         Instance = this;
+    }
+    private void Start()
+    {
+        textPos = catDialogueCanvas.GetComponentInChildren<TMP_Text>();
     }
     public void StartDay()
     {
@@ -52,7 +62,11 @@ public class DayManager : MonoBehaviour
     {
         if (days[currentDay].tutorialDay)
             yield return StartCoroutine(tutorial.EndTutorial());
-        currentDay++;
+        else
+            yield return StartCoroutine(FinalDialogue());
+
+        if (GetCurrentDay().errores < 3)
+            currentDay++;
         StartDay();
     }
 
@@ -108,5 +122,27 @@ public class DayManager : MonoBehaviour
             t += Time.deltaTime;
             yield return null;
         }
+    }
+
+    private IEnumerator FinalDialogue()
+    {
+        SetFinalDialogue();
+
+        catDialogueCanvas.SetActive(true);
+
+        if (GetCurrentDay().errores < 3)
+            EveryDialogueGenerator.Instance.StartDialogue(dailyStory, "daily1", textPos, tutorialCatSound);
+        else
+            EveryDialogueGenerator.Instance.StartDialogue(dailyStory, "daily2", textPos, tutorialCatSound);
+
+        while (EveryDialogueGenerator.Instance.dialogueActive)
+            yield return null;
+        catDialogueCanvas.SetActive(false);
+    }
+
+    private void SetFinalDialogue()
+    {
+        dailyStory = new Story(dailyInk.text);
+        dailyStory.variablesState["ERROR"] = GetCurrentDay().errores.ToString();
     }
 }

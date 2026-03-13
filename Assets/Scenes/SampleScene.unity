@@ -1686,6 +1686,8 @@ MonoBehaviour:
   textTime: 1
   tutorial: {fileID: 0}
   catDialogueCanvas: {fileID: 79659465}
+  dailyInk: {fileID: 4900000, guid: 914acfcfea9fade499b88fed40c2a91d, type: 3}
+  tutorialCatSound: {fileID: 8300000, guid: a806071a3e952794fb05798e36f947b3, type: 3}
 --- !u!4 &1626329461
 Transform:
   m_ObjectHideFlags: 0
