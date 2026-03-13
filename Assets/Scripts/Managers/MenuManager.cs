@@ -17,13 +17,12 @@ public class MenuManager : MonoBehaviour
 
     public void ChangeMainToGame()
     {
-        StartCoroutine(ChangeSceneAsync("OliverPruebas"));
+        StartCoroutine(ChangeSceneAsync("SampleScene"));
     }
     public void ChangeGameToPause()
     {
         gameMenu.SetActive(false);
         pauseMenu.SetActive(true);
-
     }
     public void ChangePauseToGame()
     {
