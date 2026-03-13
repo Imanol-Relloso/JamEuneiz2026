@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -40,27 +41,21 @@ public class GameManager : MonoBehaviour
 
     public void NextDay()
     {
-        dayManager.NextDay();
+        StartCoroutine(dayManager.NextDay());
     }
 
-    public void CorrectGuess()
-    {
-
-        if (dayManager.GetCurrentDay().tutorialDay)
-        {
-            StartCoroutine(dayManager.tutorial.CorrectBoat());
-        }
-
-        coinManger.GetComponent<CoinManger>().SumarDinero();
-        NextBoat();
-    }
-
-    public void IncorrectGuess()
+    public IEnumerator Guess(bool correct)
     {
         if (dayManager.GetCurrentDay().tutorialDay)
         {
-            StartCoroutine(dayManager.tutorial.WrongBoat());
+            if (correct)
+                yield return StartCoroutine(dayManager.tutorial.CorrectBoat());
+            else
+                yield return StartCoroutine(dayManager.tutorial.WrongBoat());
         }
+
+        if (correct)
+            coinManger.GetComponent<CoinManger>().SumarDinero();
 
         NextBoat();
     }

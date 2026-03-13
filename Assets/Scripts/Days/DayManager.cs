@@ -48,10 +48,10 @@ public class DayManager : MonoBehaviour
         StartCoroutine(StartDayCoroutine());
     }
 
-    public void NextDay()
+    public IEnumerator NextDay()
     {
         if (days[currentDay].tutorialDay)
-            StartCoroutine(tutorial.EndTutorial());
+            yield return StartCoroutine(tutorial.EndTutorial());
         currentDay++;
         StartDay();
     }

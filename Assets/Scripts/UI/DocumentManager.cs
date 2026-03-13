@@ -38,13 +38,11 @@ public class DocumentManager : MonoBehaviour
                 AudioManager.Instance.PlayRedSeal();
                 if (catBoat.IsValid())
                 {
-                    GameManager.Instance.IncorrectGuess();
-
+                    StartCoroutine(GameManager.Instance.Guess(false));
                 }
                 else
                 {
-                    GameManager.Instance.CorrectGuess();
-
+                    StartCoroutine(GameManager.Instance.Guess(true));
                 }
             }
             else if (gameObject.GetComponent<DocumentManager>().id == 2)
@@ -52,11 +50,11 @@ public class DocumentManager : MonoBehaviour
                 AudioManager.Instance.PlayGreenSeal();
                 if (catBoat.IsValid())
                 {
-                    GameManager.Instance.CorrectGuess();
+                    StartCoroutine(GameManager.Instance.Guess(true));
                 }
                 else
                 {
-                    GameManager.Instance.IncorrectGuess();
+                    StartCoroutine(GameManager.Instance.Guess(false));
                 }
             }
         }

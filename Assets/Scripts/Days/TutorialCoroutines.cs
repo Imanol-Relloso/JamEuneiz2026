@@ -76,10 +76,14 @@ public class TutorialCoroutines : MonoBehaviour
     }
     public IEnumerator EndTutorial()
     {
+        catDialogueCanvas.SetActive(true);
+
         EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "final", textPos, audioGatoTutorial);
 
         while (EveryDialogueGenerator.Instance.dialogueActive)
             yield return null;
+
+        catDialogueCanvas.SetActive(false);
 
         DayManager.Instance.tutorial = null;
     }
