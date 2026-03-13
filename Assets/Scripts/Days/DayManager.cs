@@ -50,6 +50,8 @@ public class DayManager : MonoBehaviour
 
     public void NextDay()
     {
+        if (days[currentDay].tutorialDay)
+            StartCoroutine(tutorial.EndTutorial());
         currentDay++;
         StartDay();
     }

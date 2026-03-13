@@ -21,17 +21,42 @@ public class TutorialCoroutines : MonoBehaviour
         textPos = catDialogueCanvas.GetComponentInChildren<TMP_Text>();
 
         catDialogueCanvas.SetActive(true);
-        EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "inicio", textPos, audioGatoTutorial);
+        EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "inicio1", textPos, audioGatoTutorial);
 
         while (EveryDialogueGenerator.Instance.dialogueActive)
             yield return null;
+        
+        EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "inicio2", textPos, audioGatoTutorial);
+
+        while (EveryDialogueGenerator.Instance.dialogueActive)
+            yield return null;
+        
+        EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "inicio3", textPos, audioGatoTutorial);
+       
+        while (EveryDialogueGenerator.Instance.dialogueActive)
+            yield return null;
+        
+        EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "inicio4", textPos, audioGatoTutorial);
+        
+        while (EveryDialogueGenerator.Instance.dialogueActive)
+            yield return null;
+        
+        EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "inicio5", textPos, audioGatoTutorial);
+        
+        while (EveryDialogueGenerator.Instance.dialogueActive)
+            yield return null;
+        
         catDialogueCanvas.SetActive(false);
     }
 
     public IEnumerator CorrectBoat()
     {
         catDialogueCanvas.SetActive(true);
-        EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "acierto", textPos, audioGatoTutorial);
+        if(CatBoatManager.instance.currentBoat.GetComponent<CatBoat>().IsValid())
+            EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "acierto1", textPos, audioGatoTutorial);
+        else
+            EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "acierto2", textPos, audioGatoTutorial);
+
         while (EveryDialogueGenerator.Instance.dialogueActive)
             yield return null;
         catDialogueCanvas.SetActive(false);
@@ -40,13 +65,22 @@ public class TutorialCoroutines : MonoBehaviour
     public IEnumerator WrongBoat()
     {
         catDialogueCanvas.SetActive(true);
-        EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "fallo", textPos, audioGatoTutorial);
+        if(CatBoatManager.instance.currentBoat.GetComponent<CatBoat>().ErrorEnNombre)
+            EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "fallo2", textPos, audioGatoTutorial);
+        else
+            EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "fallo1", textPos, audioGatoTutorial);
+        
         while (EveryDialogueGenerator.Instance.dialogueActive)
             yield return null;
         catDialogueCanvas.SetActive(false);
     }
-    public void EndTutorial()
+    public IEnumerator EndTutorial()
     {
+        EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "final", textPos, audioGatoTutorial);
+
+        while (EveryDialogueGenerator.Instance.dialogueActive)
+            yield return null;
+
         DayManager.Instance.tutorial = null;
     }
 }
