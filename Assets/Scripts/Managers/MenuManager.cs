@@ -29,6 +29,20 @@ public class MenuManager : MonoBehaviour
         pauseMenu.SetActive(false);
         gameMenu.SetActive(true);
     }
+    public void ChangePauseToSettings()
+    {
+        pauseMenu.SetActive(false);
+        StartCoroutine(ChangeSceneAsync("Options"));
+    }
+    public void ChangeSettingsToPause()
+    {
+        pauseMenu.SetActive(true);
+        StartCoroutine(ChangeSceneAsync("SampleScene"));
+    }
+    public void ChangePauseToMain()
+    {
+        StartCoroutine(ChangeSceneAsync("MainMenu"));
+    }
     public void ChangeMainToCredits()
     {
         StartCoroutine(ChangeSceneAsync("Credits"));
