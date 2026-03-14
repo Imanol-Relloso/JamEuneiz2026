@@ -687,7 +687,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1882587036}
-  - {fileID: 1082121101}
   m_Father: {fileID: 751750153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -770,12 +769,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8a26907ca9bda346819d1cde0f487d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 0}
+  mainMenu: {fileID: 1035006198}
   gameMenu: {fileID: 0}
-  settingMenu: {fileID: 0}
+  settingMenu: {fileID: 140492050}
   pauseMenu: {fileID: 0}
-  creditsMenu: {fileID: 0}
+  creditsMenu: {fileID: 1916089649}
   gameOverMenu: {fileID: 0}
+  panel: {fileID: 1882587035}
 --- !u!1 &1082121100
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +799,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082121100}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -808,7 +808,7 @@ RectTransform:
   - {fileID: 1916089650}
   - {fileID: 140492051}
   - {fileID: 116871797}
-  m_Father: {fileID: 1035006199}
+  m_Father: {fileID: 1882587036}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1034,7 +1034,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1082121101}
   m_Father: {fileID: 1035006199}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

@@ -1,8 +1,9 @@
-using UnityEngine;
 using System;
-using Random = UnityEngine.Random;
-using UnityEngine.SceneManagement;
+using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class AudioManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicSource, sfxSource;
 
     public AudioClip MenuTheme, MainTheme;
+
 
     private void Awake()
     {
@@ -30,6 +32,8 @@ public class AudioManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
+        float volume = PlayerPrefs.GetFloat("volume", 1f);
+        musicSource.volume = volume;
     }
     public void PlayMusic(AudioClip clip)
     {
@@ -52,10 +56,20 @@ public class AudioManager : MonoBehaviour
     public void MusicVolume(float volume)
     {
         musicSource.volume = volume;
+        PlayerPrefs.SetFloat("volume", volume);
     }
     public void SFXVolume(float volume)
     {
         sfxSource.volume = volume;
+        PlayerPrefs.SetFloat("sfxVolume", volume);
+    }
+    public float GetMusicVolume()
+    {
+        return musicSource.volume;
+    }
+    public float GetSFXVolume()
+    {
+        return sfxSource.volume;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -107,7 +121,7 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayPupu()
     {
-        sfxSource.PlayOneShot(Pupu[Random.Range(0,Pupu.Length)]);
+        sfxSource.PlayOneShot(Pupu[Random.Range(0, Pupu.Length)]);
     }
-    
+
 }

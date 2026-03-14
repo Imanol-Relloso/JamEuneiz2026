@@ -6,8 +6,16 @@ public class UIController : MonoBehaviour
 
     public void Start()
     {
-        musicSlider.value = musicSlider.maxValue;
-        SFXSlider.value = SFXSlider.maxValue;
+        float MusicVolume = AudioManager.Instance.GetMusicVolume();
+        float SFXVolume = AudioManager.Instance.GetSFXVolume();
+        musicSlider.value = MusicVolume;
+        SFXSlider.value = SFXVolume;
+
+        musicSlider.onValueChanged.AddListener(ChangeVolume);
+    }
+    void ChangeVolume(float value)
+    {
+        AudioManager.Instance.MusicVolume(value);
     }
     public void ToggleMusic()
     {
@@ -27,5 +35,6 @@ public class UIController : MonoBehaviour
     {
         AudioManager.Instance.SFXVolume(SFXSlider.value);
     }
+
 }
 
