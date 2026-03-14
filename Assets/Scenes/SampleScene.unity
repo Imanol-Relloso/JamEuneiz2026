@@ -1481,6 +1481,9 @@ MonoBehaviour:
   - name: 30
     sprite: {fileID: 21300000, guid: fd7293090623e68438ec321007e80629, type: 3}
     sound: {fileID: 8300000, guid: ccee648eb7553144ebecc9795f8a8d74, type: 3}
+  - name: 31
+    sprite: {fileID: 21300000, guid: 23e7df9bb7731a249b170fb11dd51b40, type: 3}
+    sound: {fileID: 8300000, guid: 99af5691bd9905b4c9adc3aa4fa416ae, type: 3}
   countrySprites:
   - country: 0
     sprite: {fileID: 21300000, guid: c5f1f8bfcd0811b48a4c98364fe9d2ea, type: 3}
