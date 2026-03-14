@@ -11,26 +11,9 @@ public class MenuManager : MonoBehaviour
     public GameObject gameOverMenu;
 
     public static string previousScene;
-    public static bool openPauseMenu = false;
+    public static bool openPauseMenu;
     public static bool returnToPause = false;
-    void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (returnToPause && scene.name == "SampleScene")
-        {
-            pauseMenu.SetActive(true);
-            returnToPause = false;
-        }
-    }
-
+  
     public void ChangeMainToGame()
     {
         StartCoroutine(ChangeSceneAsync("SampleScene"));
@@ -48,14 +31,7 @@ public class MenuManager : MonoBehaviour
     public void ChangePauseToSettings()
     {
         previousScene = "SampleScene";
-        returnToPause = true;
-
-        if (pauseMenu != null)
-        {
-            pauseMenu.SetActive(false);
-        }
-
-        StartCoroutine(ChangeSceneAsync("Options"));
+        StartCoroutine(LoadOptions());
     }
     public void ChangePauseToMain()
     {
@@ -79,20 +55,42 @@ public class MenuManager : MonoBehaviour
     }
     public void ChangeMainToSettings()
     {
-        openPauseMenu = false;
         previousScene = "MainMenu";
-        StartCoroutine(ChangeSceneAsync("Options"));
+        StartCoroutine(LoadOptions());
     }
     public void ChangeSettingsBack()
     {
-        StartCoroutine(ChangeSceneAsync(previousScene));
+        StartCoroutine(CloseOptionsAndRestore());
     }
     public void QuitGame()
     {
         Application.Quit();
         Debug.Log("Quit Game");
     }
-
+    private IEnumerator CloseOptionsAndRestore()
+    {
+        if (previousScene == "SampleScene" && pauseMenu != null)
+        {
+            pauseMenu.SetActive(true);
+        }
+        yield return StartCoroutine(CloseOptions());
+    }
+    private IEnumerator LoadOptions()
+    {
+        if (SceneManager.GetSceneByName("Options").isLoaded)
+        {
+            yield break;
+        }
+        AsyncOperation asyncOp = SceneManager.LoadSceneAsync("Options", LoadSceneMode.Additive);
+    }
+    private IEnumerator CloseOptions()
+    {
+        if (!SceneManager.GetSceneByName("Options").isLoaded)
+        {
+            yield break;
+        }
+        AsyncOperation asyncOp = SceneManager.UnloadSceneAsync("Options");
+    }
     private IEnumerator ChangeSceneAsync(string scene)
     {
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(scene);

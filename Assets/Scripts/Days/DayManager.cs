@@ -1,5 +1,4 @@
 using Ink.Runtime;
-using Microsoft.Unity.VisualStudio.Editor;
 using System;
 using System.Collections;
 using System.Globalization;
@@ -47,6 +46,7 @@ public class DayManager : MonoBehaviour
     }
     public void StartDay()
     {
+        // aqui
         if (currentDay < 0 || currentDay >= days.Length)
         {
             Debug.Log("No hay más días disponibles");
