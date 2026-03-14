@@ -71,5 +71,11 @@ TagManager:
   - name: sellos
     uniqueID: 1851175713
     locked: 0
+  - name: Menus
+    uniqueID: 47278147
+    locked: 0
+  - name: MenuObjetos
+    uniqueID: 3308615563
+    locked: 0
   m_RenderingLayers:
   - Default
