@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
+    public static MenuManager instance;
+
     public GameObject mainMenu;
     public GameObject gameMenu;
     public GameObject settingMenu;
@@ -13,7 +15,17 @@ public class MenuManager : MonoBehaviour
     public static string previousScene;
     public static bool openPauseMenu;
     public static bool returnToPause = false;
-  
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+    }
+
     public void ChangeMainToGame()
     {
         StartCoroutine(ChangeSceneAsync("SampleScene"));

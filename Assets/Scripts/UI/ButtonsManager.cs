@@ -13,38 +13,41 @@ public class ButtonsManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            preference = 0;
-            election = null;
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Collider2D[] hits = Physics2D.OverlapPointAll(mousePos);
-
-            foreach (Collider2D h in hits)
+            if (!MenuManager.instance.pauseMenu.activeSelf)
             {
-                if (h.gameObject == cat)
-                {
-                    election = h.gameObject;
-                    preference = 4;
-                }
-                else if (h.gameObject == document && preference < 3)
-                {
-                    election = h.gameObject;
-                    preference = 3;
-                }
-                else if (h.gameObject == closeDocument && preference < 2)
-                {
-                    election = h.gameObject;
-                    preference = 2;
-                }
-                else if (h.gameObject == deckDoor&& preference < 1)
-                {
-                    election = h.gameObject;
-                    preference = 1;
-                }
-                else if (h.gameObject == boatDoor && preference == 0)
-                    election = h.gameObject;
-            }
+                preference = 0;
+                election = null;
+                Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Collider2D[] hits = Physics2D.OverlapPointAll(mousePos);
 
-            Activation(election);
+                foreach (Collider2D h in hits)
+                {
+                    if (h.gameObject == cat)
+                    {
+                        election = h.gameObject;
+                        preference = 4;
+                    }
+                    else if (h.gameObject == document && preference < 3)
+                    {
+                        election = h.gameObject;
+                        preference = 3;
+                    }
+                    else if (h.gameObject == closeDocument && preference < 2)
+                    {
+                        election = h.gameObject;
+                        preference = 2;
+                    }
+                    else if (h.gameObject == deckDoor && preference < 1)
+                    {
+                        election = h.gameObject;
+                        preference = 1;
+                    }
+                    else if (h.gameObject == boatDoor && preference == 0)
+                        election = h.gameObject;
+                }
+
+                Activation(election);
+            }
         }
     }
     public void Activation(GameObject go)
