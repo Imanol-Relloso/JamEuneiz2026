@@ -50,11 +50,11 @@ TagManager:
   - name: Barco
     uniqueID: 1151707821
     locked: 0
-  - name: Gato
-    uniqueID: 3043435847
-    locked: 0
   - name: Muelle
     uniqueID: 3185405361
+    locked: 0
+  - name: Gato
+    uniqueID: 3043435847
     locked: 0
   - name: documentos
     uniqueID: 4008679297
