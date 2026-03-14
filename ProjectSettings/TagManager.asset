@@ -44,5 +44,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Fondo
+    uniqueID: 1472257557
+    locked: 0
+  - name: Barco
+    uniqueID: 1151707821
+    locked: 0
+  - name: Gato
+    uniqueID: 3043435847
+    locked: 0
+  - name: Muelle
+    uniqueID: 3185405361
+    locked: 0
   m_RenderingLayers:
   - Default
