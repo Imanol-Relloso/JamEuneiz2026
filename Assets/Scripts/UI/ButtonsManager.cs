@@ -14,6 +14,7 @@ public class ButtonsManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             preference = 0;
+            election = null;
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Collider2D[] hits = Physics2D.OverlapPointAll(mousePos);
 
@@ -72,7 +73,6 @@ public class ButtonsManager : MonoBehaviour
         }
         else if (go == cat)
         {
-            Debug.Log("entra");
             dialogueGenerator.StartDialogue();
 
         }
