@@ -29,7 +29,7 @@ public class ControladorDatosJuego : MonoBehaviour
             string content = File.ReadAllText(savingArchive);
             gameSettings = JsonUtility.FromJson<GameSettings>(content);
 
-            //current day = GameSettings.day
+            DayManager.Instance.currentDay = gameSettings.currentDay;
         }
         else
         {
@@ -42,7 +42,7 @@ public class ControladorDatosJuego : MonoBehaviour
 
         GameSettings newData = new GameSettings()
         {
-            // AQUI DEBES GUARDAR LOS DATOS
+            currentDay = DayManager.Instance.currentDay,
         };
 
         string cadenaJSON = JsonUtility.ToJson(newData);
