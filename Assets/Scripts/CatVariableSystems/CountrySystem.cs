@@ -3,9 +3,13 @@ using System.Collections.Generic;
 
 public enum Country
 {
-    MiauLandia,
-    Catarias,
-    Gatonida
+    Nyon,
+    Miaouncia,
+    Myausia,
+    Yaong,
+    Miyavia,
+    Naulandia,
+    Meog
 }
 public class CountrySystem : GenericSystem
 {

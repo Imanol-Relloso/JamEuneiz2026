@@ -12,6 +12,6 @@ Hoy has metido la pata {ERROR} veces. No me esperaba esto de un gatete como tú.
 -> END
 
 === final ===
-Hoy era tu último día en el contrato. Has tranajado muy bien. Toma tu pago, son {FISH} pescaditos. Disfrutalos que te lo mereces. Chao pescao
+Hoy era tu último día en el contrato. Has trabajado muy bien. Toma tu pago, son {FISH} pescaditos. Disfrutalos que te lo mereces. Chao pescao.
 
 -> END

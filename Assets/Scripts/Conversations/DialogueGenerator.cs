@@ -15,7 +15,7 @@ public class DialogueGenerator : MonoBehaviour
 
     public TextAsset ink;
     private Story story;
-    public string[] sentences = { "dialogo1", "dialogo2", "dialogo3", "dialogo4" };
+    public string[] sentences = { "dialogo1", "dialogo2", "dialogo3", "dialogo4", "dialogo5", "dialogo6" };
 
     [SerializeField] public TMP_Text dialogueText;
 
