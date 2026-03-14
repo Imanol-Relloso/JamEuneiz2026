@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using Random = UnityEngine.Random;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 public class AudioManager : MonoBehaviour
 {
@@ -41,6 +42,22 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
     }
 
+    public void ToggleMusic()
+    {
+        musicSource.mute = !musicSource.mute;
+    }
+    public void ToggleSFX()
+    {
+        sfxSource.mute = !sfxSource.mute;
+    }
+    public void MusicVolume(float volume)
+    {
+        musicSource.volume = volume;
+    }
+    public void SFXVolume(float volume)
+    {
+        sfxSource.volume = volume;
+    }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {

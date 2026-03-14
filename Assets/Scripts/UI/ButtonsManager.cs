@@ -32,6 +32,7 @@ public class ButtonsManager : MonoBehaviour
             boatDoor.SetActive(false);
             deckDoor.SetActive(false);
             deck.SetActive(false);
+            cat.SetActive(false);
         }
         else if (hit.collider.gameObject == closeDocument)
         {
@@ -42,6 +43,7 @@ public class ButtonsManager : MonoBehaviour
             boatDoor.SetActive(true);
             deckDoor.SetActive(false);
             deck.SetActive(false);
+            cat.SetActive(true);
         }
         else if (hit.collider.gameObject == boatDoor)
         {
@@ -53,6 +55,7 @@ public class ButtonsManager : MonoBehaviour
             boatDoor.SetActive(false);
             deckDoor.SetActive (true);
             deck.SetActive(true);
+            cat.SetActive(false);
         }
         else if (hit.collider.gameObject == deckDoor)
         {
@@ -64,6 +67,7 @@ public class ButtonsManager : MonoBehaviour
             boatDoor.SetActive(true);
             deckDoor.SetActive(false);
             deck.SetActive(false);
+            cat.SetActive(true);
         }
         else if (hit.collider.gameObject == cat)
         {
