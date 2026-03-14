@@ -10,9 +10,25 @@ public class MenuManager : MonoBehaviour
     public GameObject creditsMenu;
     public GameObject gameOverMenu;
 
-    void Start()
+    public static string previousScene;
+    public static bool openPauseMenu = false;
+    public static bool returnToPause = false;
+    void OnEnable()
     {
-       
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (returnToPause && scene.name == "SampleScene")
+        {
+            pauseMenu.SetActive(true);
+            returnToPause = false;
+        }
     }
 
     public void ChangeMainToGame()
@@ -21,23 +37,25 @@ public class MenuManager : MonoBehaviour
     }
     public void ChangeGameToPause()
     {
-        gameMenu.SetActive(false);
+        //gameMenu.SetActive(false);
         pauseMenu.SetActive(true);
     }
     public void ChangePauseToGame()
     {
         pauseMenu.SetActive(false);
-        gameMenu.SetActive(true);
+        //gameMenu.SetActive(true);
     }
     public void ChangePauseToSettings()
     {
-        pauseMenu.SetActive(false);
+        previousScene = "SampleScene";
+        returnToPause = true;
+
+        if (pauseMenu != null)
+        {
+            pauseMenu.SetActive(false);
+        }
+
         StartCoroutine(ChangeSceneAsync("Options"));
-    }
-    public void ChangeSettingsToPause()
-    {
-        pauseMenu.SetActive(true);
-        StartCoroutine(ChangeSceneAsync("SampleScene"));
     }
     public void ChangePauseToMain()
     {
@@ -61,11 +79,13 @@ public class MenuManager : MonoBehaviour
     }
     public void ChangeMainToSettings()
     {
+        openPauseMenu = false;
+        previousScene = "MainMenu";
         StartCoroutine(ChangeSceneAsync("Options"));
     }
-    public void ChangeSettingToMain()
+    public void ChangeSettingsBack()
     {
-        StartCoroutine(ChangeSceneAsync("MainMenu"));
+        StartCoroutine(ChangeSceneAsync(previousScene));
     }
     public void QuitGame()
     {
