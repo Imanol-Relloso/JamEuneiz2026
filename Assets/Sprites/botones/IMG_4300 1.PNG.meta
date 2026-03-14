@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 278d3e9f496ff984791051792b9788b2
+guid: 5201f71b5d0d6a74d80b3e2ebee36616
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7260564990735570679
-    second: IMG_4300_0
+      213: -1716860698998912879
+    second: IMG_4300 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,13 +46,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1000
-  spriteBorder: {x: 1671, y: 571, z: 250, w: 661}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_4300_0
+      name: IMG_4300 1_0
       rect:
         serializedVersion: 2
-        x: 1766
-        y: 615
+        x: 4
+        y: 7
         width: 1431
         height: 1146
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7f65e651465b2c460800000000000000
-      internalID: 7260564990735570679
+      spriteID: 19847536a4c7c28e0800000000000000
+      internalID: -1716860698998912879
       vertices: []
       indices: 
       edges: []
@@ -125,8 +125,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_4300_0: 7260564990735570679
+      IMG_4300 1_0: -1716860698998912879
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
