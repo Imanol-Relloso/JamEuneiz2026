@@ -982,6 +982,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b055c7044cfc00a41ae3c47df9d95444, type: 3}
   doorSound:
   - {fileID: 8300000, guid: 6a7a9b31a60d06a4db38cfa7d7d25196, type: 3}
+  Pupu:
+  - {fileID: 8300000, guid: 636a3be81b7f98241af9e07394fccc2b, type: 3}
+  - {fileID: 8300000, guid: c8c27a351be9084439cf69198db13d6b, type: 3}
   musicSource: {fileID: 1226939507}
   sfxSource: {fileID: 1972785850}
   MenuTheme: {fileID: 8300000, guid: a764d027542efda41bc7c46838661699, type: 3}

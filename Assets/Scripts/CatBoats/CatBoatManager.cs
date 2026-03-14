@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class CatBoatManager : MonoBehaviour
@@ -7,6 +10,12 @@ public class CatBoatManager : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
 
     public GameObject currentBoat;
+
+    [Header("TRANSICION ENTRE BARCOS")]
+    [SerializeField] private GameObject transitionCanvas;
+    [SerializeField] private UnityEngine.UI.Image fadeImage;
+    [SerializeField] private TMP_Text dayText;
+    [SerializeField] private float fadeTime = 1f;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -32,12 +41,50 @@ public class CatBoatManager : MonoBehaviour
 
         GameObject prefab = currentDay.GetNextBoat();
 
-        currentBoat = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
+        StartCoroutine(spawningCatBoat(prefab));
     }
 
     private void ClearBoat()
     {
         if (currentBoat != null)
             Destroy(currentBoat);
+    }
+
+    private IEnumerator spawningCatBoat(GameObject prefab)
+    {
+        transitionCanvas.SetActive(true);
+        dayText.gameObject.SetActive(false);
+
+        yield return FadeTransition(0f,1f);
+
+        AudioManager.Instance.PlayPupu();
+
+        yield return new WaitForSeconds(2f);
+
+        AudioManager.Instance.PlayDoor();
+
+        currentBoat = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
+
+        yield return FadeTransition(1f,0f);
+
+        dayText.gameObject.SetActive(true);
+        transitionCanvas.SetActive(false);
+    }
+
+    private IEnumerator FadeTransition(float start, float end)
+    {
+        float t = 0;
+        Color backColor = fadeImage.color;
+
+        while (t < fadeTime)
+        {
+            float value = Mathf.Lerp(start, end, t / fadeTime);
+
+            fadeImage.color = new Color(backColor.r, backColor.g, backColor.b, value);
+            dayText.alpha = value;
+
+            t += Time.deltaTime;
+            yield return null;
+        }
     }
 }

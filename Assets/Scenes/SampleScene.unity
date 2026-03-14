@@ -150,6 +150,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 40920656}
   currentBoat: {fileID: 0}
+  transitionCanvas: {fileID: 1232477416}
+  fadeImage: {fileID: 1146690748}
+  dayText: {fileID: 53692542}
+  fadeTime: 1
 --- !u!4 &40920656
 Transform:
   m_ObjectHideFlags: 0
@@ -896,7 +900,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 0000000015dec057adaaa544472567b5b16dddbda34f902d393b5d298197efeed9081c3921b3566e
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1092,7 +1096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &739266514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1988,7 +1992,7 @@ GameObject:
   - component: {fileID: 1232477418}
   - component: {fileID: 1232477417}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: TransitionCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2846,7 +2850,7 @@ SpriteRenderer:
   m_SortingLayerID: 1472257557
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8323855860781523010, guid: be218806964fc0948bc8f67289eb3492, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be218806964fc0948bc8f67289eb3492, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3066,12 +3070,12 @@ SpriteRenderer:
   m_SortingLayerID: -1109561935
   m_SortingLayer: 4
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1071943067260708337, guid: 625687d3500f04f46a4aaf955c105826, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 625687d3500f04f46a4aaf955c105826, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 35.05, y: 8.320891}
+  m_Size: {x: 35.079998, y: 24.802656}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3086,7 +3090,7 @@ Transform:
   m_GameObject: {fileID: 1839044948}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0166, y: -2.6806, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 0.5059054, y: 0.54810786, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

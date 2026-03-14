@@ -5,25 +5,50 @@ using UnityEngine.EventSystems;
 public class ButtonsManager : MonoBehaviour
 {
     [SerializeField] private GameObject boat, deck, deckDoor, boatDoor, documentDisplayed, document, closeDocument, cat;
-    private RaycastHit2D hit;
     [SerializeField] private DialogueGenerator dialogueGenerator;
-
+    private GameObject election;
+    private int preference;
+    
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
+            preference = 0;
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            hit = Physics2D.Raycast(mousePos, Vector2.zero);
-            
-            if (hit.collider != null)
+            Collider2D[] hits = Physics2D.OverlapPointAll(mousePos);
+
+            foreach (Collider2D h in hits)
             {
-                Activation();
+                if (h.gameObject == cat)
+                {
+                    election = h.gameObject;
+                    preference = 4;
+                }
+                else if (h.gameObject == document && preference < 3)
+                {
+                    election = h.gameObject;
+                    preference = 3;
+                }
+                else if (h.gameObject == closeDocument && preference < 2)
+                {
+                    election = h.gameObject;
+                    preference = 2;
+                }
+                else if (h.gameObject == deckDoor&& preference < 1)
+                {
+                    election = h.gameObject;
+                    preference = 1;
+                }
+                else if (h.gameObject == boatDoor && preference == 0)
+                    election = h.gameObject;
             }
+
+            Activation(election);
         }
     }
-    public void Activation()
+    public void Activation(GameObject go)
     {
-        if (hit.collider.gameObject == document)
+        if (go == document)
         {
             boat.SetActive(false);
             documentDisplayed.SetActive(true);
@@ -34,7 +59,7 @@ public class ButtonsManager : MonoBehaviour
             deck.SetActive(false);
             cat.SetActive(false);
         }
-        else if (hit.collider.gameObject == closeDocument)
+        else if (go == closeDocument)
         {
             boat.SetActive(true);
             documentDisplayed.SetActive(false);
@@ -45,7 +70,25 @@ public class ButtonsManager : MonoBehaviour
             deck.SetActive(false);
             cat.SetActive(true);
         }
-        else if (hit.collider.gameObject == boatDoor)
+        else if (go == cat)
+        {
+            Debug.Log("entra");
+            dialogueGenerator.StartDialogue();
+
+        }
+        else if (go == deckDoor)
+        {
+            AudioManager.Instance.PlayDoor();
+            boat.SetActive(true);
+            documentDisplayed.SetActive(false);
+            document.SetActive(true);
+            closeDocument.SetActive(false);
+            boatDoor.SetActive(true);
+            deckDoor.SetActive(false);
+            deck.SetActive(false);
+            cat.SetActive(true);
+        }
+        else if (go == boatDoor)
         {
             AudioManager.Instance.PlayDoor();
             boat.SetActive(false);
@@ -53,29 +96,9 @@ public class ButtonsManager : MonoBehaviour
             document.SetActive(false);
             closeDocument.SetActive(false);
             boatDoor.SetActive(false);
-            deckDoor.SetActive (true);
+            deckDoor.SetActive(true);
             deck.SetActive(true);
             cat.SetActive(false);
         }
-        else if (hit.collider.gameObject == deckDoor)
-        {
-            AudioManager.Instance.PlayDoor();
-            boat.SetActive(true);
-            documentDisplayed.SetActive(false);
-            document.SetActive(true);
-            closeDocument.SetActive(false);
-            boatDoor.SetActive(true);
-            deckDoor.SetActive(false);
-            deck.SetActive(false);
-            cat.SetActive(true);
-        }
-        else if (hit.collider.gameObject == cat)
-        {
-            dialogueGenerator.StartDialogue();
-        }
-
     }
-    // Update is called once per frame
-
-
 }

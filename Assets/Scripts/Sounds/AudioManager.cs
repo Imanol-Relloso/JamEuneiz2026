@@ -8,11 +8,10 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    public AudioClip[] musicSounds, sealSounds, boxSounds, doorSound;
+    public AudioClip[] musicSounds, sealSounds, boxSounds, doorSound, Pupu;
     public AudioSource musicSource, sfxSource;
 
     public AudioClip MenuTheme, MainTheme;
-
 
     private void Awake()
     {
@@ -105,6 +104,10 @@ public class AudioManager : MonoBehaviour
     public void PlayGreenSeal()
     {
         sfxSource.PlayOneShot(sealSounds[1]);
+    }
+    public void PlayPupu()
+    {
+        sfxSource.PlayOneShot(Pupu[Random.Range(0,Pupu.Length)]);
     }
     
 }

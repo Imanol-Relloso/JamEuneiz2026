@@ -56,5 +56,20 @@ TagManager:
   - name: Muelle
     uniqueID: 3185405361
     locked: 0
+  - name: documentos
+    uniqueID: 4008679297
+    locked: 0
+  - name: libro
+    uniqueID: 958138585
+    locked: 0
+  - name: cubierta
+    uniqueID: 764432291
+    locked: 0
+  - name: cajas
+    uniqueID: 693975865
+    locked: 0
+  - name: sellos
+    uniqueID: 1851175713
+    locked: 0
   m_RenderingLayers:
   - Default
