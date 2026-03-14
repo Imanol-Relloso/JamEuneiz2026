@@ -33,7 +33,8 @@ public enum Name
     Metalmaren,
     Zarpas,
     Sua,
-    Bartolo
+    Bartolo,
+    Coco
 }
 public class NameSystem : GenericSystem
 {

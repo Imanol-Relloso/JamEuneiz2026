@@ -47,6 +47,9 @@ TagManager:
   - name: Fondo
     uniqueID: 1472257557
     locked: 0
+  - name: bandera
+    uniqueID: 2684925965
+    locked: 0
   - name: Barco
     uniqueID: 1151707821
     locked: 0
