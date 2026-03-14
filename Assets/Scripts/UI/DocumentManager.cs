@@ -10,8 +10,12 @@ public class DocumentManager : MonoBehaviour
     [SerializeField] private Transform target;
     private float putDistance = 1f;
     private Vector3 resetPosition;
+    [SerializeField] private GameObject greenPaw;
+    [SerializeField] private GameObject redPaw;
     void Start()
     {
+        greenPaw.SetActive(false);
+        redPaw.SetActive(false);
         resetPosition = transform.position;
         catBoat = GetComponentInParent<CatBoat>();
     }
@@ -35,6 +39,8 @@ public class DocumentManager : MonoBehaviour
             transform.position = target.position;
             if (gameObject.GetComponent<DocumentManager>().id == 1)
             {
+                redPaw.SetActive(true);
+                transform.position = resetPosition;
                 AudioManager.Instance.PlayRedSeal();
                 if (catBoat.IsValid())
                 {
@@ -47,6 +53,8 @@ public class DocumentManager : MonoBehaviour
             }
             else if (gameObject.GetComponent<DocumentManager>().id == 2)
             {
+                greenPaw.SetActive(true);
+                transform.position = resetPosition;
                 AudioManager.Instance.PlayGreenSeal();
                 if (catBoat.IsValid())
                 {
