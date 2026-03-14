@@ -12,7 +12,7 @@ public class DayManager : MonoBehaviour
 {
     public static DayManager Instance;
 
-    [SerializeField] private int currentDay;
+    [SerializeField] public int currentDay;
 
     [Header("PREFABS DE LOS DIAS")]
     [SerializeField] private Day[] days;
