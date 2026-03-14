@@ -17,5 +17,5 @@ public class CountrySprite
 public class LoadSprite
 {
     public Load Load;
-    public Sprite sprite;
+    public Sprite[] sprites;
 }
