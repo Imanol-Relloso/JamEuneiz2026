@@ -23,18 +23,15 @@ public class Book : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            abrirLibro(activar);
-        }*/
+
     }
 
 
     public void OpenBook(InputAction.CallbackContext callbackContext)
     {
-        if(callbackContext.performed)
+        
+        if (callbackContext.performed)
         {
-            Debug.Log("Abrir libro");
 
             abrirLibro(activar);
         }

@@ -1,9 +1,13 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Paginas : MonoBehaviour
 {
-    public GameObject[] Botones;
-    public GameObject[] paginas;
+    private GameObject[] Botones;
+    private List<GameObject> paginas;
+    [SerializeField] private GameObject[] paginasPrefab;
+    private List<GameObject> paginasP;
+
     public int paginaactual ;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,14 +21,47 @@ public class Paginas : MonoBehaviour
             Botones[i] = this.transform.GetChild(i).gameObject;
         }
 
-        paginas = new GameObject[Botones[2].transform.childCount];
 
-        for (int i = 0; i < paginas.Length; i++)
+        
+
+    }
+
+   
+
+
+    public void ComprobarDia()
+    {
+        string[] days = new string[4];
+        days = DayManager.Instance.GetCurrentDay().ToString().Split(" ");
+        int diaActual = int.Parse(days[1]);
+
+        paginaactual = 0;
+        Botones = new GameObject[this.transform.childCount];
+
+        for (int i = 0; i < Botones.Length; i++)
         {
-            paginas[i] = Botones[2].transform.GetChild(i).gameObject;
+            Botones[i] = this.transform.GetChild(i).gameObject;
         }
-        ComprobarPagina();
 
+        GameObject instanciaPaginas = Instantiate(paginasPrefab[diaActual]);
+        Debug.Log(instanciaPaginas.transform.childCount+ " ");
+
+        for (int j = 0; j < paginasPrefab[diaActual].transform.childCount; j++)
+        {
+            Debug.Log(instanciaPaginas.transform.GetChild(0).name + "23999 " + instanciaPaginas.transform.childCount + " aa " + paginasPrefab[diaActual].transform.childCount);
+
+            instanciaPaginas.transform.GetChild(0).SetParent(Botones[2].transform, false);
+
+        }
+
+        paginas = new List<GameObject>();
+
+        for (int i = 0; i < Botones[2].transform.childCount; i++)
+        {
+            paginas.Add(Botones[2].transform.GetChild(i).gameObject);
+        }
+
+        
     }
 
     public void CambiarPagina(string accion)

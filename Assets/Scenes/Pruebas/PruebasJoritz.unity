@@ -265,16 +265,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1972044069888424372, guid: ba34e9a9d5867bf4db65e8c80d9a9066, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.05943275
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972044069888424372, guid: ba34e9a9d5867bf4db65e8c80d9a9066, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.036574
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972044069888424372, guid: ba34e9a9d5867bf4db65e8c80d9a9066, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.036574
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972044069888424372, guid: ba34e9a9d5867bf4db65e8c80d9a9066, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.34
+      value: 2.7599
       objectReference: {fileID: 0}
     - target: {fileID: 1972044069888424372, guid: ba34e9a9d5867bf4db65e8c80d9a9066, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9
+      value: -1.2854
       objectReference: {fileID: 0}
     - target: {fileID: 1972044069888424372, guid: ba34e9a9d5867bf4db65e8c80d9a9066, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.027713358
+      value: 0.0010136
       objectReference: {fileID: 0}
     - target: {fileID: 1972044069888424372, guid: ba34e9a9d5867bf4db65e8c80d9a9066, type: 3}
       propertyPath: m_LocalRotation.w
@@ -308,7 +320,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: LibroGO
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5630837779462027227, guid: ba34e9a9d5867bf4db65e8c80d9a9066, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

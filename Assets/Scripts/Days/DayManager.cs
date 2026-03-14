@@ -30,6 +30,7 @@ public class DayManager : MonoBehaviour
     [SerializeField] private AudioClip tutorialCatSound;
     private TMP_Text textPos;
     private Story dailyStory;
+    [SerializeField] private Paginas paginas;
 
     private void Awake()
     {
@@ -53,8 +54,8 @@ public class DayManager : MonoBehaviour
             return;
         }
 
-        days[currentDay].InitializeDay(); 
-
+        days[currentDay].InitializeDay();
+        paginas.ComprobarDia();
         StartCoroutine(StartDayCoroutine());
     }
 
