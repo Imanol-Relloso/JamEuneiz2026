@@ -26,7 +26,7 @@ public class Paginas : MonoBehaviour
 
         if (diaActual == 0)
             paginasP.Add(paginasDeDias[0]);
-        else if (diaActual > 1)
+        else if (diaActual > 0)
         {
             paginasP.Add(paginasDeDias[1]);
 

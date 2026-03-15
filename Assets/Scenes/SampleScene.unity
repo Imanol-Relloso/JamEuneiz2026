@@ -1953,7 +1953,6 @@ MonoBehaviour:
   gameSettings:
     currentDay: 0
     dinero: 0
-    currentBoat: {fileID: 0}
   isContinue: 0
 --- !u!1 &1097042711
 GameObject:
@@ -2409,6 +2408,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 739266513}
   creditsMenu: {fileID: 0}
   gameOverMenu: {fileID: 0}
+  botonContinuar: {fileID: 0}
 --- !u!1 &1232477416
 GameObject:
   m_ObjectHideFlags: 0

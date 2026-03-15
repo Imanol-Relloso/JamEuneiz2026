@@ -38,7 +38,11 @@ public class DocumentManager : MonoBehaviour
         if (distance < putDistance)
         {
             transform.position = target.position;
-            if (gameObject.GetComponent<DocumentManager>().id == 1)
+            if (gameObject.GetComponent<DocumentManager>().id == 0)
+            {
+                transform.position = resetPosition;
+            }
+            else if (gameObject.GetComponent<DocumentManager>().id == 1)
             {
                 redPaw.SetActive(true);
                 transform.position = resetPosition;
