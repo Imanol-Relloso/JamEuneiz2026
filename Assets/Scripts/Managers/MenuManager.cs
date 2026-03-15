@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.IO;
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager instance;
@@ -17,32 +16,7 @@ public class MenuManager : MonoBehaviour
     public static bool openPauseMenu;
     public static bool returnToPause = false;
 
-    public ControladorDatosJuego dataController;
-    public string gameScene;
-    [SerializeField] private GameObject continueButton;
 
-
-    private void Start()
-    {
-        if(!File.Exists(dataController.savingArchive))
-        {
-            continueButton.SetActive(false);
-        }
-    }
-    public void NewGame()
-    {
-        Debug.Log("Nueva partifa");
-        dataController.gameSettings = new GameSettings();
-        dataController.gameSettings.currentDay = 0;
-
-        StartCoroutine(ChangeSceneAsync("SampleScene"));
-    }
-
-    public void ContinueGame()
-    {
-        dataController.LoadData();
-        StartCoroutine(ChangeSceneAsync("SampleScene"));
-    }
     public void ChangeMainToGame()
     {
         StartCoroutine(ChangeSceneAsync("SampleScene"));

@@ -45,19 +45,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialDay: 0
-  errores: 0
   notAllowedCat: 00000000
   notAllowedCountry: 
   notAllowedLoad: 
   catBoatWithoutError:
-  - {fileID: 536098355670350403, guid: 2e8bdc24cc5a2574c91aafbc67173c5c, type: 3}
-  - {fileID: 536098355670350403, guid: 61978831a7a859f41932efb374e74859, type: 3}
-  - {fileID: 536098355670350403, guid: e58ded5b9d4966a468b5bde3d414bacd, type: 3}
-  - {fileID: 536098355670350403, guid: 2e8bdc24cc5a2574c91aafbc67173c5c, type: 3}
+  - {fileID: 536098355670350403, guid: f6e0ac7185281f24fb97642365a94726, type: 3}
+  - {fileID: 536098355670350403, guid: 556b2a5efe921b1429aa4746873021ba, type: 3}
+  - {fileID: 536098355670350403, guid: 0fa6e85794f23ea45b739e785c4ac43b, type: 3}
+  - {fileID: 536098355670350403, guid: 3e612a85558897643a77afefbd083e3a, type: 3}
   catBoatWithError:
-  - {fileID: 536098355670350403, guid: 61978831a7a859f41932efb374e74859, type: 3}
-  - {fileID: 536098355670350403, guid: e58ded5b9d4966a468b5bde3d414bacd, type: 3}
-  - {fileID: 536098355670350403, guid: e99493c469679f54199e34ed73f70695, type: 3}
-  - {fileID: 536098355670350403, guid: e99493c469679f54199e34ed73f70695, type: 3}
+  - {fileID: 536098355670350403, guid: e3923cc4e326eab47a06949fdb40b46c, type: 3}
+  - {fileID: 536098355670350403, guid: fad9bbb2b0999b143836d47e8ca5fa7a, type: 3}
+  - {fileID: 536098355670350403, guid: 469bda69f806cdc4b81c2d9b30a9337c, type: 3}
+  - {fileID: 536098355670350403, guid: e82cb2535362c8747a4691e262c58c44, type: 3}
   boatsWithoutErrors: 4
   boatsWithErrors: 2
