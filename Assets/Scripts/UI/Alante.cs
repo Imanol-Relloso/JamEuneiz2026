@@ -13,6 +13,7 @@ public class Alante : MonoBehaviour
 
     void OnMouseDown()
     {
+        AudioManager.Instance.PlayLibreta();
         paginas.CambiarPagina(alante);
     }
 }

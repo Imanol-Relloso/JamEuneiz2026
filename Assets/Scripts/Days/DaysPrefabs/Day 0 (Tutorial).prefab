@@ -74,4 +74,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialInk: {fileID: 4900000, guid: 1401d52cdb714a2479fb154e722b2bc9, type: 3}
-  audioGatoTutorial: {fileID: 8300000, guid: a806071a3e952794fb05798e36f947b3, type: 3}
+  audioGatoTutorial: {fileID: 8300000, guid: 19d4fb4b874ba7640bfb6e50c9063275, type: 3}

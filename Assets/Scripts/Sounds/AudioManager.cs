@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    public AudioClip[] musicSounds, sealSounds, boxSounds, doorSound, Pupu;
+    public AudioClip[] musicSounds, sealSounds, boxSounds, doorSound, Pupu, libreta;
     public AudioSource musicSource, sfxSource;
 
     public AudioClip MenuTheme, MainTheme;
@@ -104,7 +104,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBox()
     {
-        sfxSource.PlayOneShot(boxSounds[0]);
+        sfxSource.PlayOneShot(boxSounds[Random.Range(0,boxSounds.Length)]);
     }
 
     public void PlayDoor()
@@ -122,6 +122,10 @@ public class AudioManager : MonoBehaviour
     public void PlayPupu()
     {
         sfxSource.PlayOneShot(Pupu[Random.Range(0, Pupu.Length)]);
+    }
+    public void PlayLibreta()
+    {
+        sfxSource.PlayOneShot(libreta[Random.Range(0, libreta.Length)]);
     }
 
 }
