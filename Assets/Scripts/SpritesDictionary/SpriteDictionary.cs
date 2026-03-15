@@ -38,6 +38,7 @@ public class SpriteDictionary : MonoBehaviour
     private void InitializeDict()
     {
         nameDict = new Dictionary<Name, Sprite>();
+        pasportDict = new Dictionary<Name, Sprite>();
         countryDict = new Dictionary<Country, Sprite>();
         loadDict = new Dictionary<Load, Sprite[]>();
         nameAudio = new Dictionary<Name, AudioClip>();
