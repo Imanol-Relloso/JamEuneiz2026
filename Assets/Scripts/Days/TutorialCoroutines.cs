@@ -67,6 +67,10 @@ public class TutorialCoroutines : MonoBehaviour
         catDialogueCanvas.SetActive(true);
         if(CatBoatManager.instance.currentBoat.GetComponent<CatBoat>().ErrorEnNombre)
             EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "fallo2", textPos, audioGatoTutorial);
+        else if(CatBoatManager.instance.currentBoat.GetComponent<CatBoat>().ErrorEnPaisPermitido)
+            EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "fallo3", textPos, audioGatoTutorial);
+        else if(CatBoatManager.instance.currentBoat.GetComponent<CatBoat>().ErrorEnBandera)
+            EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "fallo4", textPos, audioGatoTutorial);
         else
             EveryDialogueGenerator.Instance.StartDialogue(tutorialStory, "fallo1", textPos, audioGatoTutorial);
         

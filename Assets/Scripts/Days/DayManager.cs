@@ -98,7 +98,7 @@ public class DayManager : MonoBehaviour
     {
         transitionCanvas.SetActive(true);
 
-        dayText.text = "DÍA " + currentDay;
+        dayText.text = "DÍA " + (currentDay + 1);
 
         yield return StartCoroutine(FadeTransition(0, 1));
 
