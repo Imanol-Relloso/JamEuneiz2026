@@ -4,6 +4,7 @@ using System.Collections;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -50,8 +51,7 @@ public class DayManager : MonoBehaviour
         // aqui
         if (currentDay < 0 || currentDay >= days.Length)
         {
-            Debug.Log("No hay más días disponibles");
-            return;
+            MenuManager.instance.ChangeMainToCredits();
         }
 
         days[currentDay].InitializeDay();
