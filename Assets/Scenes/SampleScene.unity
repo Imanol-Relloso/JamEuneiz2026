@@ -490,6 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dinero: 0
+  book: {fileID: 1319509039}
 --- !u!4 &484846331
 Transform:
   m_ObjectHideFlags: 0

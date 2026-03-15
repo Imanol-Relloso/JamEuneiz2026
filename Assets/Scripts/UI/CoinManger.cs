@@ -7,6 +7,7 @@ public class CoinManger : MonoBehaviour
     public int dinero = 0;
     private TextMeshProUGUI texto;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] public GameObject book;
 
     private void Awake()
     {

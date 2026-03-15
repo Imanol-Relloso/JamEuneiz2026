@@ -13,7 +13,7 @@ public class ButtonsManager : MonoBehaviour
 
     private void Start()
     {
-        book = GameObject.FindWithTag("Libro");
+        book = CoinManger.Instance.book;
     }
 
     void Update()
