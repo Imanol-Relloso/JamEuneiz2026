@@ -7,7 +7,7 @@ public class ControladorDatosJuego : MonoBehaviour
 
     private void Awake()
     {
-        savingArchive = Application.dataPath + "/gameSettings.json";
+        savingArchive = Application.persistentDataPath + "/gameSettings.json";
     }
 
     private void Update()
@@ -22,7 +22,7 @@ public class ControladorDatosJuego : MonoBehaviour
         }
     }
 
-    private void LoadData()
+    public void LoadData()
     {
         if (File.Exists(savingArchive))
         {
@@ -36,7 +36,7 @@ public class ControladorDatosJuego : MonoBehaviour
             Debug.Log("El archivo no existe");
         }
     }
-    private void SaveData()
+    public void SaveData()
     {
         Debug.Log("Guardo !");
 
