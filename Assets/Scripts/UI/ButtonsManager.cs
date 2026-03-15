@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class ButtonsManager : MonoBehaviour
 {
-    [SerializeField] private GameObject boat, deck, deckDoor, boatDoor, documentDisplayed, document, closeDocument, cat;
+    [SerializeField] private GameObject boat, deck, deckDoor, boatDoor, documentDisplayed, document, closeDocument, cat, catDialogue;
     [SerializeField] private DialogueGenerator dialogueGenerator;
     private GameObject election;
     private int preference;
@@ -60,6 +60,7 @@ public class ButtonsManager : MonoBehaviour
     }
     public void Activation(GameObject go)
     {
+        catDialogue.SetActive(false);
         if (go == document)
         {
             boat.SetActive(false);
@@ -84,6 +85,7 @@ public class ButtonsManager : MonoBehaviour
         }
         else if (go == cat)
         {
+            catDialogue.SetActive(true);
             dialogueGenerator.StartDialogue();
 
         }
