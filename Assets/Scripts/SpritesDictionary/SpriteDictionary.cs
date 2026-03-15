@@ -30,8 +30,6 @@ public class SpriteDictionary : MonoBehaviour
         }
         Instance = this;
 
-        DontDestroyOnLoad(gameObject);
-
         InitializeDict();
     }
 
