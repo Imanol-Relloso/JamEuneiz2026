@@ -55,7 +55,7 @@ public class DayManager : MonoBehaviour
         }
 
         days[currentDay].InitializeDay();
-        paginas.ComprobarDia();
+        paginas.ComprobarDia(currentDay);
         StartCoroutine(StartDayCoroutine());
     }
 

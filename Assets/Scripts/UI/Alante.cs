@@ -3,20 +3,16 @@ using UnityEngine;
 using System.Collections;
 public class Alante : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private bool alante;
+    private Paginas paginas;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        paginas = transform.parent.GetComponent<Paginas>();
     }
 
     void OnMouseDown()
     {
-        transform.parent.GetComponent<Paginas>().CambiarPagina(gameObject.name);
+        paginas.CambiarPagina(alante);
     }
 }

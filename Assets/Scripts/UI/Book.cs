@@ -12,7 +12,6 @@ public class Book : MonoBehaviour
 
     public InputActionReference openBook;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         libro = GameObject.FindWithTag("Libro").gameObject;
@@ -20,19 +19,11 @@ public class Book : MonoBehaviour
         this.gameObject.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
     public void OpenBook(InputAction.CallbackContext callbackContext)
     {
         
         if (callbackContext.performed)
         {
-
             abrirLibro(activar);
         }
         

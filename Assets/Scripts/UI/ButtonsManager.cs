@@ -8,12 +8,19 @@ public class ButtonsManager : MonoBehaviour
     [SerializeField] private DialogueGenerator dialogueGenerator;
     private GameObject election;
     private int preference;
-    
+
+    private GameObject book;
+
+    private void Start()
+    {
+        book = GameObject.FindWithTag("Libro");
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (!MenuManager.instance.pauseMenu.activeSelf)
+            if (!MenuManager.instance.pauseMenu.activeSelf && !book.activeSelf)
             {
                 preference = 0;
                 election = null;

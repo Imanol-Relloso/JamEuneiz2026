@@ -1,113 +1,83 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
+using Unity.VisualScripting;
 
 public class Paginas : MonoBehaviour
 {
-    private GameObject[] Botones;
-    private GameObject[] paginas;
-    [SerializeField] private GameObject[] paginasPrefab;
-    private List<GameObject> paginasP;
+    [SerializeField]private GameObject BotonAlante;
+    [SerializeField]private GameObject BotonAtras;
+    [SerializeField] private Sprite[] paginaQueCambia;
+    [SerializeField] private Sprite[] paginasDeDias;
+    [SerializeField] private Sprite[] paginasNormales;
+    private List<Sprite> paginasP = new List<Sprite>();
+    private SpriteRenderer sr;
 
-    public int paginaactual ;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public int paginaactual = 1;
+    void Awake()
     {
-        paginaactual = 0;
-        Botones = new GameObject[this.transform.childCount];
+        sr = GetComponent<SpriteRenderer>();
+    }
+    public void ComprobarDia(int diaActual)
+    {
+        paginasP.Clear();
 
-        for (int i = 0; i < Botones.Length; i++)
+        paginasP.Add(paginaQueCambia[diaActual]);
+
+        if (diaActual == 0)
+            paginasP.Add(paginasDeDias[0]);
+        else if (diaActual > 1)
         {
-            Botones[i] = this.transform.GetChild(i).gameObject;
+            paginasP.Add(paginasDeDias[1]);
+
+            if (diaActual == 2)
+                paginasP.Add(paginasDeDias[2]);
+            else if (diaActual > 2)
+            {
+                paginasP.Add(paginasDeDias[3]);
+
+                if (diaActual == 4)
+                    paginasP.Add(paginasDeDias[4]);
+                else if (diaActual > 4)
+                {
+                    paginasP.Add(paginasDeDias[5]);
+
+                    if (diaActual == 6)
+                        paginasP.Add(paginasDeDias[6]);
+                }
+            }
         }
 
-        ComprobarPagina();
+        for (int i = 0; i < paginasNormales.Length; i++)
+        {
+            paginasP.Add(paginasNormales[i]);
+        }
 
-
-
+        paginaactual = 0;
+        ActualizarSprite();
+        ActualizarBotones();
     }
 
-   
-
-
-    public void ComprobarDia()
+    public void CambiarPagina(bool accion)
     {
-        string[] days = new string[4];
-        days = DayManager.Instance.GetCurrentDay().ToString().Split(" ");
-        int diaActual = int.Parse(days[1]);
-
-        paginaactual = 0;
-        Botones = new GameObject[this.transform.childCount];
-
-        for (int i = 0; i < Botones.Length; i++)
-        {
-            Botones[i] = this.transform.GetChild(i).gameObject;
-        }
-
-        GameObject instanciaPaginas = Instantiate(paginasPrefab[diaActual]);
-        Debug.Log(instanciaPaginas.transform.childCount+ " ");
-
-        for (int j = 0; j < paginasPrefab[diaActual].transform.childCount; j++)
-        {
-            Debug.Log(instanciaPaginas.transform.GetChild(0).name + "23999 " + instanciaPaginas.transform.childCount + " aa " + paginasPrefab[diaActual].transform.childCount);
-
-            instanciaPaginas.transform.GetChild(0).SetParent(Botones[2].transform, false);
-
-        }
-
-        paginas = new GameObject[Botones[2].transform.childCount];
-
-        for (int i = 0; i < Botones[2].transform.childCount; i++)
-        {
-            paginas[i] = Botones[2].transform.GetChild(i).gameObject;
-            paginas[i].gameObject.SetActive(false);
-        }
-        paginas[0].gameObject.SetActive(true);
-
-        ComprobarPagina();
-
-    }
-
-    public void CambiarPagina(string accion)
-    {
-        paginas[paginaactual].gameObject.SetActive(false);
-        if(accion.ToLower() == "atras")
-        {
+        if (!accion)
             paginaactual--;
-            ComprobarPagina();
-        }
-        else if (accion.ToLower() == "alante")
-        {
-            paginaactual++;
-            ComprobarPagina();
-        }
-
-        paginas[paginaactual].gameObject.SetActive(true);
-
-    }
-
-    public void ComprobarPagina()
-    {
-        if (paginaactual == 0)
-        {
-            Botones[0].gameObject.SetActive(false);
-            Botones[1].gameObject.SetActive(true);
-        }
-        else if (paginaactual == Botones[2].transform.childCount-1)
-        {
-            Botones[0].gameObject.SetActive(true);
-            Botones[1].gameObject.SetActive(false);
-        }
         else
-        {
-            Botones[0].gameObject.SetActive(true);
-            Botones[1].gameObject.SetActive(true);
-        }
+            paginaactual++;
+
+        paginaactual = Mathf.Clamp(paginaactual, 0, paginasP.Count - 1);
+
+        ActualizarSprite();
+        ActualizarBotones();
+    }
+    void ActualizarSprite()
+    {
+        sr.sprite = paginasP[paginaactual];
     }
 
-    // Update is called once per frame
-    void Update()
+    void ActualizarBotones()
     {
-
+        BotonAtras.SetActive(paginaactual > 0);
+        BotonAlante.SetActive(paginaactual < paginasP.Count - 1);
     }
 }
