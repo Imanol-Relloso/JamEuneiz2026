@@ -2368,6 +2368,7 @@ MonoBehaviour:
   cat: {fileID: 2475136309438771306}
   catDialogue: {fileID: 1014482016592242691}
   dialogueGenerator: {fileID: 6735897494562626569}
+  cancelar: 0
 --- !u!1 &6041796985637822247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2519,6 +2520,7 @@ MonoBehaviour:
   target: {fileID: 1370729759879596117}
   greenPaw: {fileID: 4258227410207575901}
   redPaw: {fileID: 4839711198531961589}
+  buttonsManager: {fileID: 6648550781988966807}
 --- !u!1 &6888239771623806844
 GameObject:
   m_ObjectHideFlags: 0

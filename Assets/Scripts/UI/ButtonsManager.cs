@@ -11,6 +11,8 @@ public class ButtonsManager : MonoBehaviour
 
     private GameObject book;
     private GameObject pauseMenu;
+
+    public bool cancelar = false;
     private void Start()
     {
         book = CoinManger.Instance.book;
@@ -21,7 +23,7 @@ public class ButtonsManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (!pauseMenu.activeSelf && !book.activeSelf)
+            if (!pauseMenu.activeSelf && !book.activeSelf && !cancelar)
             {
                 preference = 0;
                 election = null;

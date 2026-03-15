@@ -12,6 +12,7 @@ public class DocumentManager : MonoBehaviour
     private Vector3 resetPosition;
     [SerializeField] private GameObject greenPaw;
     [SerializeField] private GameObject redPaw;
+    [SerializeField] private ButtonsManager buttonsManager;
     void Start()
     {
         greenPaw.SetActive(false);
@@ -50,6 +51,7 @@ public class DocumentManager : MonoBehaviour
                 {
                     StartCoroutine(GameManager.Instance.Guess(true));
                 }
+                buttonsManager.cancelar = true;
             }
             else if (gameObject.GetComponent<DocumentManager>().id == 2)
             {
@@ -64,6 +66,7 @@ public class DocumentManager : MonoBehaviour
                 {
                     StartCoroutine(GameManager.Instance.Guess(false));
                 }
+                buttonsManager.cancelar = true;
             }
         }
         else
