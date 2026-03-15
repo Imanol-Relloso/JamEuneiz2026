@@ -3099,7 +3099,7 @@ MonoBehaviour:
   tutorial: {fileID: 0}
   catDialogueCanvas: {fileID: 79659465}
   dailyInk: {fileID: 4900000, guid: 914acfcfea9fade499b88fed40c2a91d, type: 3}
-  tutorialCatSound: {fileID: 8300000, guid: a806071a3e952794fb05798e36f947b3, type: 3}
+  tutorialCatSound: {fileID: 8300000, guid: 19d4fb4b874ba7640bfb6e50c9063275, type: 3}
   paginas: {fileID: 897357281}
 --- !u!4 &1626329461
 Transform:

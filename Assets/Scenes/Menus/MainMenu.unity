@@ -642,6 +642,7 @@ MonoBehaviour:
   gameSettings:
     currentDay: 0
     dinero: 0
+    currentBoat: {fileID: 0}
   isContinue: 0
 --- !u!4 &769251732
 Transform:
@@ -998,7 +999,6 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   creditsMenu: {fileID: 1916089649}
   gameOverMenu: {fileID: 0}
-  botonContinuar: {fileID: 1994499977}
 --- !u!1 &1082121100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,11 +1206,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f5c0f488e1b816a448dbb1a76ddc7b96, type: 3}
   boxSounds:
   - {fileID: 8300000, guid: b055c7044cfc00a41ae3c47df9d95444, type: 3}
+  - {fileID: 8300000, guid: 5158c03a44f8ff446b6d1c5f67208fb8, type: 3}
+  - {fileID: 8300000, guid: 9b509a51f5e43fd4a801e388e5e8e870, type: 3}
   doorSound:
   - {fileID: 8300000, guid: 6a7a9b31a60d06a4db38cfa7d7d25196, type: 3}
   Pupu:
   - {fileID: 8300000, guid: 636a3be81b7f98241af9e07394fccc2b, type: 3}
   - {fileID: 8300000, guid: c8c27a351be9084439cf69198db13d6b, type: 3}
+  libreta:
+  - {fileID: 8300000, guid: ec603693292323c4b8a96d1c69efd4da, type: 3}
+  - {fileID: 8300000, guid: 39cb462c2e55fec4ea92f34c77e412e6, type: 3}
+  - {fileID: 8300000, guid: 0e146394e6d3a6c4d8872d158004a877, type: 3}
   musicSource: {fileID: 1226939507}
   sfxSource: {fileID: 1972785850}
   MenuTheme: {fileID: 8300000, guid: a764d027542efda41bc7c46838661699, type: 3}
@@ -1401,6 +1407,7 @@ MonoBehaviour:
   gameSettings:
     currentDay: 0
     dinero: 0
+    currentBoat: {fileID: 0}
   isContinue: 0
 --- !u!4 &1779153244
 Transform:
