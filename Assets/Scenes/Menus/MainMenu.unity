@@ -642,7 +642,6 @@ MonoBehaviour:
   gameSettings:
     currentDay: 0
     dinero: 0
-    currentBoat: {fileID: 0}
   isContinue: 0
 --- !u!4 &769251732
 Transform:
@@ -999,6 +998,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   creditsMenu: {fileID: 1916089649}
   gameOverMenu: {fileID: 0}
+  botonContinuar: {fileID: 1994499977}
 --- !u!1 &1082121100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,7 +1401,6 @@ MonoBehaviour:
   gameSettings:
     currentDay: 0
     dinero: 0
-    currentBoat: {fileID: 0}
   isContinue: 0
 --- !u!4 &1779153244
 Transform:
