@@ -1,8 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
 public enum Load {
-    None,
-    si
+    anzuelos,
+    cañas,
+    latas,
+    pecesNormales,
+    pecesLargos,
+    pelotas
 }
 public class LoadSystem : GenericSystem
 {
@@ -12,7 +16,6 @@ public class LoadSystem : GenericSystem
     public Sprite loadSprite1;
     public Sprite loadSprite2;
     public Sprite loadSprite3;
-    public Sprite loadSprite4;
 
     public void SetValues(bool errorDialogue, bool errorNotAllowed)
     {
@@ -42,7 +45,6 @@ public class LoadSystem : GenericSystem
         loadSprite1 = SpriteDictionary.Instance.GetLoadSpriteArr(boatLoad)[0];
         loadSprite2 = SpriteDictionary.Instance.GetLoadSpriteArr(boatLoad)[1];
         loadSprite3 = SpriteDictionary.Instance.GetLoadSpriteArr(boatLoad)[2];
-        loadSprite4 = SpriteDictionary.Instance.GetLoadSpriteArr(boatLoad)[3];
     }
     public override bool IsCorrect()
     {

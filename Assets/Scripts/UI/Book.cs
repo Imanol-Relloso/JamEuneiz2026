@@ -28,6 +28,11 @@ public class Book : MonoBehaviour
         }
         
     }
+    public void OpenBook()
+    {
+            abrirLibro(activar);
+    }
+
 
     private void abrirLibro(bool n)
     {

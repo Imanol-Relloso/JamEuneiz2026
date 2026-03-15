@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: a862f5d8dc298514292d645ca23de389
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -555283164953591624
+    second: "caja 1 ca\xF1as de pescar_0"
+  - first:
+      213: -2169331223325682142
+    second: "caja 1 ca\xF1as de pescar_1"
+  - first:
+      213: 3474145810888374077
+    second: "caja 1 ca\xF1as de pescar_2"
+  - first:
+      213: -4843839879975582750
+    second: "caja 1 ca\xF1as de pescar_3"
+  - first:
+      213: -8117491284055432540
+    second: "caja 1 ca\xF1as de pescar_4"
+  - first:
+      213: -3681546024089776380
+    second: "caja 1 ca\xF1as de pescar_5"
+  - first:
+      213: 6993295971917616583
+    second: "caja 1 ca\xF1as de pescar_6"
+  - first:
+      213: 8777715140219004970
+    second: "caja 1 ca\xF1as de pescar_7"
+  - first:
+      213: -5655530664145805883
+    second: "caja 1 ca\xF1as de pescar_8"
+  - first:
+      213: -2752984852171065025
+    second: "caja 1 ca\xF1as de pescar_9"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "caja 1 ca\xF1as de pescar_0"
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 719
+        width: 2215
+        height: 1442
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b0cf2b47ec3b48f0800000000000000
+      internalID: -555283164953591624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "caja 1 ca\xF1as de pescar_1"
+      rect:
+        serializedVersion: 2
+        x: 3207
+        y: 1948
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2265289febcf4e1e0800000000000000
+      internalID: -2169331223325682142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "caja 1 ca\xF1as de pescar_2"
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 1931
+        width: 16
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d37b9eb4535a63030800000000000000
+      internalID: 3474145810888374077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "caja 1 ca\xF1as de pescar_3"
+      rect:
+        serializedVersion: 2
+        x: 3725
+        y: 1881
+        width: 20
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e34f2dfa4937ccb0800000000000000
+      internalID: -4843839879975582750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "caja 1 ca\xF1as de pescar_4"
+      rect:
+        serializedVersion: 2
+        x: 3053
+        y: 1444
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a2eb8a7fa0e85f80800000000000000
+      internalID: -8117491284055432540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "caja 1 ca\xF1as de pescar_5"
+      rect:
+        serializedVersion: 2
+        x: 3112
+        y: 1295
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40f80e1956588ecc0800000000000000
+      internalID: -3681546024089776380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "caja 1 ca\xF1as de pescar_6"
+      rect:
+        serializedVersion: 2
+        x: 3117
+        y: 1282
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c5d15762ad2d0160800000000000000
+      internalID: 6993295971917616583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "caja 1 ca\xF1as de pescar_7"
+      rect:
+        serializedVersion: 2
+        x: 3122
+        y: 1266
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a286258e965b0d970800000000000000
+      internalID: 8777715140219004970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "caja 1 ca\xF1as de pescar_8"
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 1222
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cd924343d48381b0800000000000000
+      internalID: -5655530664145805883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "caja 1 ca\xF1as de pescar_9"
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 1142
+        width: 8
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f39ff46ecde6bc9d0800000000000000
+      internalID: -2752984852171065025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "caja 1 ca\xF1as de pescar_0": -555283164953591624
+      "caja 1 ca\xF1as de pescar_1": -2169331223325682142
+      "caja 1 ca\xF1as de pescar_2": 3474145810888374077
+      "caja 1 ca\xF1as de pescar_3": -4843839879975582750
+      "caja 1 ca\xF1as de pescar_4": -8117491284055432540
+      "caja 1 ca\xF1as de pescar_5": -3681546024089776380
+      "caja 1 ca\xF1as de pescar_6": 6993295971917616583
+      "caja 1 ca\xF1as de pescar_7": 8777715140219004970
+      "caja 1 ca\xF1as de pescar_8": -5655530664145805883
+      "caja 1 ca\xF1as de pescar_9": -2752984852171065025
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

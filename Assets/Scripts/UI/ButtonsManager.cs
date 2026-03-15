@@ -53,7 +53,6 @@ public class ButtonsManager : MonoBehaviour
                     else if (h.gameObject == boatDoor && preference == 0)
                         election = h.gameObject;
                 }
-
                 Activation(election);
             }
         }
