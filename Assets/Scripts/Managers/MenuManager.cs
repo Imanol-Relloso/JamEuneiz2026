@@ -21,19 +21,19 @@ public class MenuManager : MonoBehaviour
     public void ContinueGame()
     {
         string savingArchive = ControladorDatosJuego.Instance.savingArchive;
+
         if (File.Exists(savingArchive))
         {
             ControladorDatosJuego.Instance.isContinue = true;
             ControladorDatosJuego.Instance.LoadData();
-            StartCoroutine(ChangeSceneAsync("SampleScene"));
 
+            StartCoroutine(ChangeSceneAsync("SampleScene"));
         }
         else
         {
-            Debug.Log("nono");
-            return;
+            Debug.Log("No hay partida guardada");
         }
-       
+
     }
     public void ActivarBotonContinuar()
     {

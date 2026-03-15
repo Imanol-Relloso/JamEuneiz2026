@@ -68,8 +68,11 @@ public class DayManager : MonoBehaviour
 
         if (GetCurrentDay().errores < 3)
             currentDay++;
-        StartDay();
+        ControladorDatosJuego.Instance.gameSettings.currentDay = currentDay;
+        ControladorDatosJuego.Instance.gameSettings.dinero = CoinManger.Instance.dinero;
+
         ControladorDatosJuego.Instance.SaveData();
+        StartDay(); 
     }
 
     public DayConditions GetDayConditions()
