@@ -42,6 +42,7 @@ public class NameSystem : GenericSystem
     public Name dialogueName;
 
     public Sprite catSprite;
+    public Sprite catPasport;
     public AudioClip catAudio;
 
     public void SetValues(bool errorNombre, bool errorBlackList)
@@ -65,12 +66,17 @@ public class NameSystem : GenericSystem
                 dialogueName = catName;
         }
         SetSprite();
+        SetPasport();
         SetAudio();
     }
 
     private void SetSprite()
     {
         catSprite = SpriteDictionary.Instance.GetNameSprite(catName);
+    }
+    private void SetPasport()
+    {
+        catPasport = SpriteDictionary.Instance.GetPasport(catName);
     }
     private void SetAudio()
     {

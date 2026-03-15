@@ -16,6 +16,7 @@ public class SpriteDictionary : MonoBehaviour
     [SerializeField] private LoadSprite[] loadSprites;
 
     private static Dictionary<Name, Sprite> nameDict;
+    private static Dictionary<Name, Sprite> pasportDict;
     private static Dictionary<Country, Sprite> countryDict;
     private static Dictionary<Load, Sprite[]> loadDict;
     private static Dictionary<Name, AudioClip> nameAudio;
@@ -43,6 +44,8 @@ public class SpriteDictionary : MonoBehaviour
 
         foreach (NameSprite nameSprite in nameSprites)
             nameDict[nameSprite.name] = nameSprite.sprite;
+        foreach (NameSprite nameSprite in nameSprites)
+            pasportDict[nameSprite.name] = nameSprite.pasport;
         foreach (CountrySprite countrySprite in countrySprites)
             countryDict[countrySprite.country] = countrySprite.sprite;
         foreach (LoadSprite loadSprite in loadSprites)
@@ -54,6 +57,10 @@ public class SpriteDictionary : MonoBehaviour
     public Sprite GetNameSprite(Name name)
     {
         return nameDict[name];
+    }
+    public Sprite GetPasport(Name name)
+    {
+        return pasportDict[name];
     }
     public Sprite GetCountrySprite(Country country)
     {
