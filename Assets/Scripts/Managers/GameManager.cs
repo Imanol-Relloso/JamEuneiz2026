@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [Header("Managers")]
     public DayManager dayManager;
     public CatBoatManager catBoatManager;
-
+    public bool isContinue = false;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -22,7 +22,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if(ControladorDatosJuego.Instance.isContinue)
+        {
+            ControladorDatosJuego.Instance.LoadData();
+            DayManager.Instance.currentDay = ControladorDatosJuego.Instance.gameSettings.currentDay;
+            CoinManger.Instance.dinero = ControladorDatosJuego.Instance.gameSettings.dinero;
+        }
+ 
         StartDay();
+        Debug.Log(CoinManger.Instance.dinero);
     }
 
     public void StartDay()

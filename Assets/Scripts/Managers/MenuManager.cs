@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager instance;
@@ -15,10 +16,25 @@ public class MenuManager : MonoBehaviour
     public static string previousScene;
     public static bool openPauseMenu;
     public static bool returnToPause = false;
-
-
+    private string savingArchive;
+    public void ContinueGame()
+    {
+        savingArchive = Application.persistentDataPath + "/save.json";
+        if (File.Exists(savingArchive))
+        {
+            ControladorDatosJuego.Instance.isContinue = true;
+            StartCoroutine(ChangeSceneAsync("SampleScene"));
+            ControladorDatosJuego.Instance.LoadData();
+        }
+        else
+        {
+            return;
+        }
+       
+    }
     public void ChangeMainToGame()
     {
+        ControladorDatosJuego.Instance.isContinue = false;
         StartCoroutine(ChangeSceneAsync("SampleScene"));
     }
     public void ChangeGameToPause()
