@@ -63,11 +63,11 @@ public class ButtonsManager : MonoBehaviour
 
         if (go == document)
         {
-            boat.SetActive(false);
+            boat.SetActive(true);
             documentDisplayed.SetActive(true);
             document.SetActive(false);
             closeDocument.SetActive(true);
-            boatDoor.SetActive(false);
+            boatDoor.SetActive(true);
             deckDoor.SetActive(false);
             deck.SetActive(false);
             cat.SetActive(false);
