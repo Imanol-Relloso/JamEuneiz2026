@@ -71,9 +71,6 @@ TagManager:
   - name: sellos
     uniqueID: 1851175713
     locked: 0
-  - name: dialogo
-    uniqueID: 1209274645
-    locked: 0
   - name: MenuObjetos
     uniqueID: 3308615563
     locked: 0
