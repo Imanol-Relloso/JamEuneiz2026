@@ -10,17 +10,18 @@ public class ButtonsManager : MonoBehaviour
     private int preference;
 
     private GameObject book;
-
+    private GameObject pauseMenu;
     private void Start()
     {
         book = CoinManger.Instance.book;
+        pauseMenu = CoinManger.Instance.pauseMenu;
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (!MenuManager.instance.pauseMenu.activeSelf && !book.activeSelf)
+            if (!pauseMenu.activeSelf && !book.activeSelf)
             {
                 preference = 0;
                 election = null;
