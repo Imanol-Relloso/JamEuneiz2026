@@ -16,15 +16,6 @@ public class MenuManager : MonoBehaviour
     public static bool openPauseMenu;
     public static bool returnToPause = false;
 
-    private void Awake()
-    {
-        if (instance != null && instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        instance = this;
-    }
 
     public void ChangeMainToGame()
     {

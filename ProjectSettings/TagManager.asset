@@ -83,5 +83,8 @@ TagManager:
   - name: Menus
     uniqueID: 47278147
     locked: 0
+  - name: PauseMenu
+    uniqueID: 1992785757
+    locked: 0
   m_RenderingLayers:
   - Default
