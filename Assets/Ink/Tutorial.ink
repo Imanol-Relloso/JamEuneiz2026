@@ -43,6 +43,16 @@ Hmm... Ese gato te ha mentido. Revisa mejor los documentos, su nombre no coincid
 
 -> END
 
+=== fallo3 ===
+Hmm... Ese gato. ¿Acaso no has visto que era de Meong? Hoy no permitiamos la entrada de gatetes provenientes de ahí.
+
+-> END
+
+=== fallo4 ===
+Hmm... Ese gatete no tenía la bandera de su país. Si te encuentras alguno más así no les dejes pasar.
+
+-> END
+
 === final1 ===
 Y ese era el último barco. Buen trabajo. Chao pescao.
 

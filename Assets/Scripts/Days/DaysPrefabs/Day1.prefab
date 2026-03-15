@@ -45,18 +45,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialDay: 0
-  notAllowedCat: 00000000
-  notAllowedCountry: 
-  notAllowedLoad: 
+  errores: 0
+  notAllowedCat: 
+  notAllowedCountry: 06000000
+  notAllowedLoad: 05000000
   catBoatWithoutError:
-  - {fileID: 536098355670350403, guid: f6e0ac7185281f24fb97642365a94726, type: 3}
-  - {fileID: 536098355670350403, guid: 556b2a5efe921b1429aa4746873021ba, type: 3}
-  - {fileID: 536098355670350403, guid: 0fa6e85794f23ea45b739e785c4ac43b, type: 3}
-  - {fileID: 536098355670350403, guid: 3e612a85558897643a77afefbd083e3a, type: 3}
+  - {fileID: 5105322267815985710, guid: 61978831a7a859f41932efb374e74859, type: 3}
+  - {fileID: 536098355670350403, guid: e99493c469679f54199e34ed73f70695, type: 3}
+  - {fileID: 5105322267815985710, guid: 61978831a7a859f41932efb374e74859, type: 3}
+  - {fileID: 5105322267815985710, guid: 61978831a7a859f41932efb374e74859, type: 3}
+  - {fileID: 5105322267815985710, guid: 61978831a7a859f41932efb374e74859, type: 3}
+  - {fileID: 5105322267815985710, guid: 61978831a7a859f41932efb374e74859, type: 3}
+  - {fileID: 5105322267815985710, guid: 61978831a7a859f41932efb374e74859, type: 3}
   catBoatWithError:
-  - {fileID: 536098355670350403, guid: e3923cc4e326eab47a06949fdb40b46c, type: 3}
-  - {fileID: 536098355670350403, guid: fad9bbb2b0999b143836d47e8ca5fa7a, type: 3}
-  - {fileID: 536098355670350403, guid: 469bda69f806cdc4b81c2d9b30a9337c, type: 3}
-  - {fileID: 536098355670350403, guid: e82cb2535362c8747a4691e262c58c44, type: 3}
-  boatsWithoutErrors: 4
+  - {fileID: 536098355670350403, guid: 84cfa91f80350c4498121fce18b49ec2, type: 3}
+  - {fileID: 536098355670350403, guid: a38ae759cec571340b247998add58603, type: 3}
+  - {fileID: 536098355670350403, guid: 1501c3ccf5357ae47957d493eb86b7eb, type: 3}
+  - {fileID: 5105322267815985710, guid: 098b001a515c15e41be82383bf41bc4d, type: 3}
+  - {fileID: 5105322267815985710, guid: 2e476316503863b41b44e97190ef6083, type: 3}
+  - {fileID: 5105322267815985710, guid: 3d6606f4f0fd54049adeb7daf45e0632, type: 3}
+  - {fileID: 5105322267815985710, guid: 12c588d4587565f4684ffde3b30174fc, type: 3}
+  - {fileID: 5105322267815985710, guid: 4c3349cc7ad44404597085f4cf2e6fd3, type: 3}
+  - {fileID: 5105322267815985710, guid: 149f7868838e4de4a8e69594e225fdfc, type: 3}
+  - {fileID: 5105322267815985710, guid: b83e5174fe27de5429597c545a9eac60, type: 3}
+  boatsWithoutErrors: 5
   boatsWithErrors: 2

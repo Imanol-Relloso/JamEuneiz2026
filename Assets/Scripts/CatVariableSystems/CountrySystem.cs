@@ -9,7 +9,7 @@ public enum Country
     Yaong,
     Miyavia,
     Naulandia,
-    Meog
+    Meong
 }
 public class CountrySystem : GenericSystem
 {

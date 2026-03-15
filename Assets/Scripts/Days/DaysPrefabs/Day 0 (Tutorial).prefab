@@ -48,13 +48,16 @@ MonoBehaviour:
   tutorialDay: 1
   errores: 0
   notAllowedCat: 
-  notAllowedCountry: 
+  notAllowedCountry: 06000000
   notAllowedLoad: 
   catBoatWithoutError:
   - {fileID: 5105322267815985710, guid: 61978831a7a859f41932efb374e74859, type: 3}
-  - {fileID: 536098355670350403, guid: e99493c469679f54199e34ed73f70695, type: 3}
-  - {fileID: 536098355670350403, guid: 2e8bdc24cc5a2574c91aafbc67173c5c, type: 3}
-  - {fileID: 536098355670350403, guid: e58ded5b9d4966a468b5bde3d414bacd, type: 3}
+  - {fileID: 5105322267815985710, guid: 61978831a7a859f41932efb374e74859, type: 3}
+  - {fileID: 5105322267815985710, guid: 9aa3390efdce7af4eb2d6eecc61f5401, type: 3}
+  - {fileID: 5105322267815985710, guid: 61978831a7a859f41932efb374e74859, type: 3}
+  - {fileID: 5105322267815985710, guid: 2393470fce7173543932ed0aa8361d03, type: 3}
+  - {fileID: 5105322267815985710, guid: 61978831a7a859f41932efb374e74859, type: 3}
+  - {fileID: 5105322267815985710, guid: a9f46a892d1fe534e8dfb8f653c76b4f, type: 3}
   catBoatWithError: []
   boatsWithoutErrors: 0
   boatsWithErrors: 0

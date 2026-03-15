@@ -24,5 +24,5 @@ Miaunombre es {NOMBRE}, vengo con el cargamento de {CARGA} desde {PAIS}. ¿Puedo
 -> END
 
 == dialogo6 ==
-Miaunombre es {NOMBRE}, traigo el cargamento de {CARGA} desde {PAIS}. ¿Me dejáis pasar al muelle o me vais a tener aquí relamiendome? Que la carga empieza a oler peor que un contenedor de sardinas olvidado… miau. Vamos, abrid paso antes de que se me erice el lomo y tengamos un auténtico maullido del sindigato.
+Miaunombre es {NOMBRE}, traigo el cargamento de {CARGA} desde {PAIS}. ¿Me dejáis pasar al muelle o me vais a tener aquí relamiendome? Que la carga empieza a oler peor que un contenedor de sardinas olvidado. Vamos, abrid paso antes de que se me erice el lomo y tengamos un auténtico maullido del sindigato.
 -> END
