@@ -26,6 +26,8 @@ public class DialogueGenerator : MonoBehaviour
     public bool isStarted = false;
     void Start()
     {
+        gameObject.SetActive(false);
+
         catBoat = GetComponentInParent<CatBoat>();
 
         dialogueName = catBoat.nameSystem.dialogueName;
@@ -47,7 +49,10 @@ public class DialogueGenerator : MonoBehaviour
     }
     public void StartDialogue()
     {
-        if(!EveryDialogueGenerator.Instance.dialogueActive)
+        if (!EveryDialogueGenerator.Instance.dialogueActive)
+        {
+            gameObject.SetActive(true);
             EveryDialogueGenerator.Instance.StartDialogue(story, knotRandom, dialogueText, CatBoatManager.instance.currentBoat.GetComponent<CatBoat>().nameSystem.catAudio);
+        }
     }
 }

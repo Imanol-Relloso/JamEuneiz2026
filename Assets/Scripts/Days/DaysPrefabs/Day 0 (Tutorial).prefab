@@ -51,7 +51,7 @@ MonoBehaviour:
   notAllowedCountry: 
   notAllowedLoad: 
   catBoatWithoutError:
-  - {fileID: 536098355670350403, guid: 61978831a7a859f41932efb374e74859, type: 3}
+  - {fileID: 5105322267815985710, guid: 61978831a7a859f41932efb374e74859, type: 3}
   - {fileID: 536098355670350403, guid: e99493c469679f54199e34ed73f70695, type: 3}
   - {fileID: 536098355670350403, guid: 2e8bdc24cc5a2574c91aafbc67173c5c, type: 3}
   - {fileID: 536098355670350403, guid: e58ded5b9d4966a468b5bde3d414bacd, type: 3}
