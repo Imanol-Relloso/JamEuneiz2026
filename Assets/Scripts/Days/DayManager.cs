@@ -5,6 +5,7 @@ using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -52,6 +53,8 @@ public class DayManager : MonoBehaviour
         if (currentDay < 0 || currentDay >= days.Length)
         {
             MenuManager.instance.ChangeMainToCredits();
+            if (File.Exists(ControladorDatosJuego.Instance.savingArchive))
+                File.Delete(ControladorDatosJuego.Instance.savingArchive);
         }
 
         days[currentDay].InitializeDay();
