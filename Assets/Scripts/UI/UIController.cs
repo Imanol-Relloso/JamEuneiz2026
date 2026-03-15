@@ -3,7 +3,6 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     public Slider musicSlider, SFXSlider;
-
     public void Start()
     {
         float MusicVolume = AudioManager.Instance.GetMusicVolume();
