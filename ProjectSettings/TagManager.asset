@@ -62,9 +62,6 @@ TagManager:
   - name: documentos
     uniqueID: 4008679297
     locked: 0
-  - name: libro
-    uniqueID: 958138585
-    locked: 0
   - name: cubierta
     uniqueID: 764432291
     locked: 0
@@ -79,6 +76,9 @@ TagManager:
     locked: 0
   - name: MenuObjetos
     uniqueID: 3308615563
+    locked: 0
+  - name: libro
+    uniqueID: 958138585
     locked: 0
   m_RenderingLayers:
   - Default

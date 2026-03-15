@@ -138,7 +138,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 958138585
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 2
   m_Sprite: {fileID: 7262274484022270615, guid: 0ee48b05f3198e44aa2963fb45ca43de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -289,7 +289,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 958138585
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 2
   m_Sprite: {fileID: 1622390523293927169, guid: 125369a89d57834448db3f916b490124, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -349,9 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d26e0afde0838964d97aae76234cd1cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paginasPrefab:
-  - {fileID: 7757513890897748318, guid: f9617336b6a072144ae74d479d224e7a, type: 3}
-  - {fileID: 1437931946765419016, guid: 4fac159a0cd068e42bdcf085d80ee687, type: 3}
+  paginasPrefab: []
   paginaactual: 0
 --- !u!1 &5284317161239616429
 GameObject:

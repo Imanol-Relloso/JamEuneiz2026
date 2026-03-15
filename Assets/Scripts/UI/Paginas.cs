@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class Paginas : MonoBehaviour
 {
     private GameObject[] Botones;
-    private List<GameObject> paginas;
+    private GameObject[] paginas;
     [SerializeField] private GameObject[] paginasPrefab;
     private List<GameObject> paginasP;
 
@@ -21,8 +21,9 @@ public class Paginas : MonoBehaviour
             Botones[i] = this.transform.GetChild(i).gameObject;
         }
 
+        ComprobarPagina();
 
-        
+
 
     }
 
@@ -54,14 +55,17 @@ public class Paginas : MonoBehaviour
 
         }
 
-        paginas = new List<GameObject>();
+        paginas = new GameObject[Botones[2].transform.childCount];
 
         for (int i = 0; i < Botones[2].transform.childCount; i++)
         {
-            paginas.Add(Botones[2].transform.GetChild(i).gameObject);
+            paginas[i] = Botones[2].transform.GetChild(i).gameObject;
+            paginas[i].gameObject.SetActive(false);
         }
+        paginas[0].gameObject.SetActive(true);
 
-        
+        ComprobarPagina();
+
     }
 
     public void CambiarPagina(string accion)
