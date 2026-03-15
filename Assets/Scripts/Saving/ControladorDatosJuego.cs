@@ -13,7 +13,7 @@ public class ControladorDatosJuego : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            savingArchive = Application.dataPath + "/gameSettings.json";
+            savingArchive = Application.persistentDataPath + "/gameSettings.json";
         }
         else
         {
@@ -46,16 +46,14 @@ public class ControladorDatosJuego : MonoBehaviour
     }
     public void SaveData()
     {
-        Debug.Log("Guardo !");
-
-        GameSettings newData = new GameSettings()
+        if (gameSettings == null)
         {
-            currentDay = DayManager.Instance.currentDay,
-            dinero = CoinManger.Instance.dinero,
-        };
+            Debug.LogWarning("No");
+            return;
+        }
 
-        string cadenaJSON = JsonUtility.ToJson(newData);
-        File.WriteAllText(savingArchive, cadenaJSON);
-
+        string json = JsonUtility.ToJson(gameSettings, true);
+        File.WriteAllText(savingArchive, json);
+        Debug.Log("Guardado correcto en: " + savingArchive);
     }
 }

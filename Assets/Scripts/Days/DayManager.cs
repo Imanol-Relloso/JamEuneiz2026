@@ -4,6 +4,8 @@ using System.Collections;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.IO;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -50,8 +52,9 @@ public class DayManager : MonoBehaviour
         // aqui
         if (currentDay < 0 || currentDay >= days.Length)
         {
-            Debug.Log("No hay más días disponibles");
-            return;
+            MenuManager.instance.ChangeMainToCredits();
+            if (File.Exists(ControladorDatosJuego.Instance.savingArchive))
+                File.Delete(ControladorDatosJuego.Instance.savingArchive);
         }
 
         days[currentDay].InitializeDay();
@@ -68,7 +71,11 @@ public class DayManager : MonoBehaviour
 
         if (GetCurrentDay().errores < 3)
             currentDay++;
-        StartDay();
+        ControladorDatosJuego.Instance.gameSettings.currentDay = currentDay;
+        ControladorDatosJuego.Instance.gameSettings.dinero = CoinManger.Instance.dinero;
+
+        ControladorDatosJuego.Instance.SaveData();
+        StartDay(); 
     }
 
     public DayConditions GetDayConditions()

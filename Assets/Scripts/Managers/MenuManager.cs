@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
+using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager instance;
@@ -12,29 +13,41 @@ public class MenuManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject creditsMenu;
     public GameObject gameOverMenu;
-
+    public Button botonContinuar;
     public static string previousScene;
     public static bool openPauseMenu;
     public static bool returnToPause = false;
     private string savingArchive;
     public void ContinueGame()
     {
-        savingArchive = Application.persistentDataPath + "/save.json";
+        string savingArchive = ControladorDatosJuego.Instance.savingArchive;
+
         if (File.Exists(savingArchive))
         {
             ControladorDatosJuego.Instance.isContinue = true;
-            StartCoroutine(ChangeSceneAsync("SampleScene"));
             ControladorDatosJuego.Instance.LoadData();
+
+            StartCoroutine(ChangeSceneAsync("SampleScene"));
         }
         else
         {
-            return;
+            Debug.Log("No hay partida guardada");
         }
-       
+
+    }
+    public void ActivarBotonContinuar()
+    {
+        botonContinuar.interactable = true;
     }
     public void ChangeMainToGame()
     {
         ControladorDatosJuego.Instance.isContinue = false;
+        ControladorDatosJuego.Instance.gameSettings = new GameSettings()
+        {
+            currentDay = 0,
+            dinero = 0
+        };
+        ControladorDatosJuego.Instance.SaveData();
         StartCoroutine(ChangeSceneAsync("SampleScene"));
     }
     public void ChangeGameToPause()

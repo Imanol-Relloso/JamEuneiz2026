@@ -4,5 +4,4 @@ public class GameSettings
 {
     public int currentDay;
     public int dinero;
-    public GameObject currentBoat;
 }
