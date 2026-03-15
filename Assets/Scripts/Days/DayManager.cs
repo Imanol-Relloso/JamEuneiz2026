@@ -69,6 +69,7 @@ public class DayManager : MonoBehaviour
         if (GetCurrentDay().errores < 3)
             currentDay++;
         StartDay();
+        ControladorDatosJuego.Instance.SaveData();
     }
 
     public DayConditions GetDayConditions()
